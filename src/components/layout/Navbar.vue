@@ -22,7 +22,7 @@ const open = ref(false);
 </script>
 
 <template>
-  <nav class="max-w-screen-xl mx-auto px-5">
+  <div class="max-w-screen-xl mx-auto px-5">
     <header class="flex flex-col lg:flex-row justify-between items-center my-5">
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg">The<span class="font-bold text-slate-800">Code</span><span class="text-slate-500">review</span> </a>
@@ -54,16 +54,16 @@ const open = ref(false);
           </li>
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <NuxtLink href="#" class="w-1/2 text-center">Export</NuxtLink>
-          <Button label="Import" class="!px-6 !py-3 w-1/2" severity="contrast" />
+          <LayoutNavbarExport class="w-1/2 text-center" />
+          <LayoutNavbarImport class="w-1/2" />
         </div>
       </nav>
       <div>
         <div class="hidden lg:flex items-center gap-4">
-          <NuxtLink href="#">Export</NuxtLink>
-          <Button label="Import" class="!px-6 !py-3" severity="contrast" />
+          <LayoutNavbarExport />
+          <LayoutNavbarImport />
         </div>
       </div>
     </header>
-  </nav>
+  </div>
 </template>
