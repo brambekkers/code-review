@@ -28,7 +28,7 @@ const valueData = (score: number) => {
     <h3 class="font-bold text-xl text-gray-800 mt-2">Topics</h3>
     <Fieldset v-for="topic of subject.topics" :key="topic.title" :legend="topic.title" toggleable>
       <Panel v-for="item of topic.questions" :header="item.question" class="my-3" :key="topic.title" toggleable collapsed>
-        <div class="flex h-full w-full">
+        <div class="flex h-full w-full flex-col items-end">
           <Select v-model="item.score" :options="tiers" option-label="name" option-value="score">
             <template #value="slotProps">
               <div v-if="slotProps.value" class="flex items-center">
