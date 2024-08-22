@@ -1,6 +1,5 @@
-
-import defaultTheme from "tailwindcss/defaultTheme";
-import colors from 'tailwindcss/colors'
+import defaultTheme from 'tailwindcss/defaultTheme';
+import colors from 'tailwindcss/colors';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -15,17 +14,16 @@ export default {
         emerald: colors.emerald,
         indigo: colors.indigo,
         yellow: colors.yellow,
-        stone: colors.warmGray,
-        sky: colors.lightBlue,
-        neutral: colors.trueGray,
-        gray: colors.coolGray,
-        slate: colors.blueGray,
-    },
+        stone: colors.stone,
+        sky: colors.sky,
+        neutral: colors.neutral,
+        gray: colors.gray,
+        slate: colors.slate,
+      },
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
-}
-
+  plugins: [require('@tailwindcss/typography')],
+};

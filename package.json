@@ -19,9 +19,9 @@
     "vue": "latest"
   },
   "devDependencies": {
+    "@nuxt/icon": "^1.4.7",
     "@primevue/nuxt-module": "^4.0.4",
-    "@tailwindcss/typography": "^0.5.14",
-    "nuxt-icon": "^1.0.0-beta.7"
+    "@tailwindcss/typography": "^0.5.14"
   },
   "overrides": {
     "vue": "latest"

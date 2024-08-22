@@ -1,14 +1,8 @@
-<script setup>
-  definePageMeta({
-    layout: 'landing'
-  })
-</script>
-
 <template>
-  <LandingContainer>
+  <div>
     <OverviewHero />
     <OverviewFeatures />
     <OverviewLogos />
     <OverviewCta />
-  </LandingContainer>
+  </div>
 </template>
