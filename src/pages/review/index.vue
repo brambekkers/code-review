@@ -1,6 +1,6 @@
 <script setup>
 const showReviewModal = ref(false);
-const { review, subjects, answeredPercentage } = storeToRefs(useReviewStore());
+const { subjects, answeredPercentage } = storeToRefs(useReviewStore());
 </script>
 
 <template>
@@ -23,20 +23,8 @@ const { review, subjects, answeredPercentage } = storeToRefs(useReviewStore());
       <ProgressBar :value="answeredPercentage"> {{ Math.round(answeredPercentage) }}% </ProgressBar>
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-8">
-      <div v-for="item of subjects" class="group">
-        <div class="w-full aspect-square">
-          <img
-            :src="item.img"
-            format="avif"
-            alt="Team"
-            class="w-full h-full object-cover rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
-          />
-        </div>
-
-        <div class="mt-4 text-center">
-          <h2 class="text-lg text-gray-800">{{ item.name }}</h2>
-          <h3 class="text-sm text-slate-500">{{ item.score }} / {{ item.totalQuestions }}</h3>
-        </div>
+      <div v-for="subject of subjects" class="group">
+        <ReviewSubjectTile :subject="subject" />
       </div>
     </div>
 
