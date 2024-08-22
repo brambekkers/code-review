@@ -25,7 +25,7 @@ const open = ref(false);
   <nav class="max-w-screen-xl mx-auto px-5">
     <header class="flex flex-col lg:flex-row justify-between items-center my-5">
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg"><span class="font-bold text-slate-800">Nuxt</span><span class="text-slate-500">ship</span> </a>
+        <a href="/" class="text-lg">The<span class="font-bold text-slate-800">Code</span><span class="text-slate-500">review</span> </a>
         <div class="block lg:hidden">
           <button @click="open = !open" class="text-gray-800">
             <svg fill="currentColor" class="w-4 h-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -54,14 +54,14 @@ const open = ref(false);
           </li>
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <LandingLink href="#" styleName="muted" block size="md">Log in</LandingLink>
-          <LandingLink href="#" size="md" block>Export</LandingLink>
+          <NuxtLink href="#" class="w-1/2 text-center">Export</NuxtLink>
+          <Button label="Import" class="!px-6 !py-3 w-1/2" severity="contrast" />
         </div>
       </nav>
       <div>
         <div class="hidden lg:flex items-center gap-4">
-          <a href="#">Log in</a>
-          <LandingLink href="#" size="md">Import</LandingLink>
+          <NuxtLink href="#">Export</NuxtLink>
+          <Button label="Import" class="!px-6 !py-3" severity="contrast" />
         </div>
       </div>
     </header>
