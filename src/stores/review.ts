@@ -46,41 +46,50 @@ export const useReviewStore = defineStore('review', () => {
     return selectedTopic.value?.questions[currentQuestion.value]
   })
 
+  const getRandomElement = <T>(array: T[]): T | null => {
+    return array.length ? array[Math.floor(Math.random() * array.length)] : null;
+  };
+  
+  const getNotCompleteItems = <T>(items: T[], isComplete: (item: T) => boolean): T[] => {
+    return items.filter(item => !isComplete(item));
+  };
+  
   const selectRandomQuestion = () => {
     // Get random subject
-    const notCompleteSubject = subjects.value.filter((subject) => subject.score < subject.totalQuestions)
-    const randomSubject = notCompleteSubject[Math.floor(Math.random() * notCompleteSubject.length)]
-
+    const notCompleteSubjects = getNotCompleteItems(subjects.value, subject => subject.score >= subject.totalQuestions);
+    const randomSubject = getRandomElement(notCompleteSubjects);
+  
     if (!randomSubject) {
-      currentSubject.value = null
-      currentTopic.value = null
-      currentQuestion.value = null
-      return
+      currentSubject.value = null;
+      currentTopic.value = null;
+      currentQuestion.value = null;
+      return;
     }
+  
 
-    currentSubject.value = randomSubject.key
-    console.log('currentSubject', currentSubject.value)
 
+    currentSubject.value = randomSubject.key;
+    console.log('currentSubject', currentSubject.value);
+  
     // Get random topic
-    const notCompleteTopic = randomSubject.topics
-      .map((topic, index) => {
-        return topic.questions.some((question) => !question.score) ? { ...topic, index } : null
-      })
-      .filter((topic) => topic)
-    const randomTopic = notCompleteTopic[Math.floor(Math.random() * notCompleteTopic.length)]
-    if (!randomTopic) return
-    currentTopic.value = randomTopic.index
-    console.log('currentTopic', currentTopic.value)
-
+    const notCompleteTopics = getNotCompleteItems(randomSubject.topics, topic => !topic.questions.some(question => !question.score))
+      .map((topic, index) => ({ ...topic, index }));
+    const randomTopic = getRandomElement(notCompleteTopics);
+  
+    if (!randomTopic) return;
+  
+    currentTopic.value = randomTopic.index;
+    console.log('currentTopic', currentTopic.value);
+  
     // Get random question
-    const notCompleteQuestion = randomTopic.questions
-      .map((question, index) => (!question.score ? index : null))
-      .filter((question) => question !== null)
-    const randomQuestion = notCompleteQuestion[Math.floor(Math.random() * notCompleteQuestion.length)]
-    console.log('randomQuestion', randomQuestion)
-    if (typeof randomQuestion !== 'number') return
-    currentQuestion.value = randomQuestion
-  }
+    const notCompleteQuestions = getNotCompleteItems(randomTopic.questions, question => question.score)
+      .map((_, index) => index);
+    const randomQuestion = getRandomElement(notCompleteQuestions);
+  
+    if (typeof randomQuestion !== 'number') return;
+  
+    currentQuestion.value = randomQuestion;
+  };
 
   return {
     review,

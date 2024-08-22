@@ -1,42 +1,45 @@
 <script setup>
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: "Enhance Code Quality",
     description:
-      "Build your site using Vue, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
-  },
-  {
-    title: "100% Static HTML, No JS",
-    description:
-      "Nuxt renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
-  },
-  {
-    title: "On-Demand Components",
-    description:
-      "Need some JS? Nuxt can automatically hydrate interactive components when they become visible on the page.  ",
+      "Code reviews ensure that every piece of code meets a high standard of quality. By catching bugs, enforcing coding standards, and promoting best practices, code reviews help maintain a codebase that's clean, efficient, and easy to maintain.",
     icon: "bx:bxs-data",
   },
   {
-    title: "Broad Integration",
+    title: "Boost Team Collaboration",
     description:
-      "Nuxt supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "bx:bxs-bot",
+      "Code reviews foster a culture of collaboration and knowledge sharing. Developers can learn from each other's expertise, leading to a more cohesive and knowledgeable team. This collaborative process helps distribute knowledge about the codebase, reducing dependency on individual developers.",
+    icon: "bx:bxs-group",
   },
   {
-    title: "SEO Enabled",
+    title: "Improve Code Security",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "bx:bxs-file-find",
+      "A thorough code review process can identify potential security vulnerabilities early in the development cycle. By proactively addressing security flaws, you can prevent costly breaches and ensure that your codebase is robust and secure.",
+    icon: "bx:bxs-check-shield",
   },
   {
-    title: "Community",
+    title: "Accelerate Learning and Growth",
     description:
-      "Nuxt is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
+      "Code reviews are an excellent learning opportunity for developers at all levels. Junior developers can gain insights from more experienced colleagues, while senior developers can reinforce their knowledge and stay updated with new techniques and technologies.",
+    icon: "bx:bxs-book-open",
+  },
+  {
+    title: "Ensure Code Consistency",
+    description:
+      "Consistency in code style and structure is vital for maintaining a readable and maintainable codebase. Code reviews help enforce coding standards across the team, making the code easier to navigate and reducing the cognitive load on developers.",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "Reduce Technical Debt",
+    description:
+      "By addressing issues early through code reviews, you can significantly reduce the accumulation of technical debt. This proactive approach helps avoid future headaches and costly refactoring, ensuring the long-term health and scalability of your project.",
+    icon: "bx:bxs-coin-stack",
   },
 ];
+
+
+
 </script>
 
 <template>
