@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  onMounted(() => {
-    useReviewStore().selectRandomQuestion()
-  })
+onMounted(() => {
+  useReviewStore().nextQuestion();
+});
 </script>
 
 <template>

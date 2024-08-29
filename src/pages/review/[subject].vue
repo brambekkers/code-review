@@ -5,55 +5,26 @@ const route = useRoute();
 const id = route.params.subject;
 
 const subject = computed(() => review.value[id]);
-
-const tiers = ref([
-  { name: 'S', score: 7, color: '#fe7f7e' },
-  { name: 'A ', score: 6, color: '#ffbf7e' },
-  { name: 'B ', score: 5, color: '#feff7f' },
-  { name: 'C ', score: 4, color: '#7fff7f' },
-  { name: 'D', score: 3, color: '#7ffffe' },
-  { name: 'E', score: 2, color: '#807fff' },
-  { name: 'F', score: 1, color: '#ff7ffe' },
-]);
-
-const valueData = (score: number) => {
-  return tiers.value.find((t) => t.score === score);
-};
 </script>
 
 <template>
   <div>
-    {{ subject }}
-
-    <h3 class="font-bold text-xl text-gray-800 mt-2">Topics</h3>
-    <Fieldset v-for="topic of subject.topics" :key="topic.title" :legend="topic.title" toggleable>
-      <Panel v-for="item of topic.questions" :header="item.question" class="my-3" :key="topic.title" toggleable collapsed>
-        <div class="flex h-full w-full flex-col items-end">
-          <Select v-model="item.score" :options="tiers" option-label="name" option-value="score">
-            <template #value="slotProps">
-              <div v-if="slotProps.value" class="flex items-center">
-                <Avatar :label="valueData(slotProps.value as number).name" :style="`background-color: ${valueData(slotProps.value).color}`" />
-              </div>
-              <span v-else>
-                <Avatar label="X" :style="`background-color: red`" />
-              </span>
-            </template>
-            <template #option="slotProps">
-              <Avatar :label="slotProps.option.name" :style="`background-color: ${slotProps.option.color}`" />
-              <!-- <div class="flex items-center">
-                <img
-                  :alt="slotProps.option.label"
-                  src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png"
-                  :class="`mr-2 flag flag-${slotProps.option.code.toLowerCase()}`"
-                  style="width: 18px"
-                />
-                <div>{{ slotProps.option.name }}</div>
-              </div> -->
-            </template>
-          </Select>
-          <Textarea v-model="item.comment" class="w-full mt-4" rows="5" cols="30" />
-        </div>
-      </Panel>
+    <section class="relative mb-10 mt-5 flex justify-center items-center h-60">
+      <img :src="subject.img" class="absolute inset-0 object-cover object-center w-full h-full rounded-lg" alt="Subject cover" />
+      <div class="relative z-10 bg-white/80 rounded-md text-center p-4">
+        <h3 class="font-bold text-2xl text-gray-800">{{ subject.title }}</h3>
+        <p class="max-w-[500px]">{{ subject.description }}</p>
+      </div>
+    </section>
+    <h3 class="font-bold text-xl text-gray-800 mt-6">Topics</h3>
+    <Fieldset v-for="topic of subject.topics" :key="topic.title" :legend="topic.title" toggleable class="!mb-5">
+      <section class="flex flex-col my-2">
+        <div
+          v-html="topic?.description"
+          class="border-2 border-dashed border-surface-200 h-full rounded bg-slate-50 font-medium p-5 [&>*]:list-disc [&>*]:ms-4"
+        />
+      </section>
+      <ReviewQuestionRow v-for="(question, i) of topic.questions" v-model="topic.questions[i]" class="my-3" :key="question.title" />
     </Fieldset>
   </div>
 </template>

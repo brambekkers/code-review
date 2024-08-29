@@ -10,7 +10,10 @@ const { subjects, answeredPercentage } = storeToRefs(useReviewStore());
       <template v-slot:desc>Overview of review process</template>
     </LayoutSectionHead>
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800 mt-2">Project Code Review</h2>
+      <h2 class="font-bold text-3xl text-gray-800 mt-2 flex justify-between">
+        Project Code Review
+        <TeamInfo />
+      </h2>
       <p class="text-lg leading-relaxed text-slate-500">
         Dive deep into collaborative code reviews, track progress, and provide constructive feedback to enhance the quality of development projects. Empower
         your team with detailed insights and ensure best practices are followed across all coding endeavors.
@@ -19,8 +22,12 @@ const { subjects, answeredPercentage } = storeToRefs(useReviewStore());
       <div class="mx-auto my-8">
         <Button label="Start review" severity="contrast" class="!px-12 !py-5 !text-xl" @click="showReviewModal = true" />
       </div>
-      <label class="text-sm text-slate-500">Progress</label>
-      <ProgressBar :value="answeredPercentage"> {{ Math.round(answeredPercentage) }}% </ProgressBar>
+
+      <label class="text-sm text-slate-500 flex justify-between items-bottom" for="progressBar">
+        Progress
+        <div class="font-bold">{{ Math.round(answeredPercentage) }}%</div>
+      </label>
+      <ProgressBar id="progressBar" :value="answeredPercentage"> {{}} </ProgressBar>
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-8">
       <div v-for="subject of subjects" class="group">

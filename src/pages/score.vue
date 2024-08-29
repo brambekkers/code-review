@@ -1,59 +1,34 @@
 <script setup>
-const pricing = [
-  {
-    name: 'Personal',
-    price: 'Free',
-    popular: false,
-    features: ['Lifetime free', 'Up to 3 users', 'Unlimited Pages', 'Nuxt Sub domain', 'Basic Integrations', 'Community Support'],
-    button: {
-      text: 'Get Started',
-      link: '/',
-    },
-  },
-  {
-    name: 'Startup',
-    price: {
-      monthly: '$19',
-      annual: '$16',
-      discount: '10%',
-      original: '$24',
-    },
-    popular: true,
-    features: ['All Free Features', 'Up to 20 users', '20 Custom domains', 'Unlimited Collaborators', 'Advanced Integrations', 'Priority Support'],
-    button: {
-      text: 'Get Started',
-      link: '#',
-    },
-  },
-  {
-    name: 'Enterprise',
-    price: 'Custom',
-    popular: false,
-    features: [
-      'All Pro Features',
-      'Unlimited Custom domains',
-      '99.99% Uptime SLA',
-      'SAML & SSO Integration',
-      'Dedicated Account Manager',
-      '24/7 Phone Support',
-    ],
-    button: {
-      text: 'Contact us',
-      link: '/contact',
-    },
-  },
-];
+const { team } = storeToRefs(useTeamStore());
 </script>
 
 <template>
   <div>
     <LayoutSectionHead>
-      <template v-slot:title>Pricing</template>
-      <template v-slot:desc>Simple & Predictable pricing. No Surprises.</template>
+      <template v-slot:title>Score</template>
+      <template v-slot:desc>The complete review ready to submit</template>
     </LayoutSectionHead>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
-      <LandingPricing v-for="item of pricing" :plan="item" />
+    <div class="flex justify-end gap-2 mx-auto max-w-4xl mt-16">
+      <Button label="Export PDF" outlined severity="contrast" />
+      <Button label="Publish" severity="contrast" />
     </div>
+
+    <Panel header="Project details" class="mx-auto max-w-4xl mt-4">
+      <ul class="list-disc">
+        <li v-for="(item, key) in team" class="flex py-3 border-b border-secondary">
+          <div class="w-1/3 capitalize">{{ key.replace(/([A-Z])/g, ' $1').trim() }}</div>
+
+          <!-- On Date -->
+          <div v-if="key === 'date'">{{ item.toDateString() }}</div>
+
+          <!-- On array -->
+          <div v-else-if="key === 'reviewers'">
+            <span v-for="name of item" class="me-3">{{ name }}</span>
+          </div>
+          <div v-else>{{ item }}</div>
+        </li>
+      </ul>
+    </Panel>
   </div>
 </template>
