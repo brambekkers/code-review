@@ -1,5 +1,6 @@
 import Aura from '@primevue/themes/aura';
 
+console.log(process.env.FB_API_KEY);
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: false,
@@ -13,7 +14,7 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['stores'],
   },
-  modules: ['@nuxtjs/tailwindcss', '@primevue/nuxt-module', '@nuxt/icon', '@pinia/nuxt'],
+  modules: ['@nuxtjs/tailwindcss', '@primevue/nuxt-module', '@nuxt/icon', '@pinia/nuxt', 'nuxt-vuefire', '@nuxtjs/mdc'],
   primevue: {
     options: {
       theme: {
@@ -23,6 +24,20 @@ export default defineNuxtConfig({
           cssLayer: false,
         },
       },
+    },
+  },
+  vuefire: {
+    auth: {
+      enabled: true,
+    },
+    config: {
+      apiKey: 'AIzaSyBPwpOPDoJ6kheG_qDYxJFdVk3PtLUrca0',
+      authDomain: 'code-review-f53d6.firebaseapp.com',
+      projectId: 'code-review-f53d6',
+      storageBucket: 'code-review-f53d6.appspot.com',
+      messagingSenderId: '328549315397',
+      appId: '1:328549315397:web:e9da32c9f766b0cf24442c',
+      measurementId: 'G-4C9D38WGLW',
     },
   },
 });

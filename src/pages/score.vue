@@ -1,5 +1,5 @@
 <script setup>
-const { team } = storeToRefs(useTeamStore());
+const { AIScore } = storeToRefs(useScoreStore());
 </script>
 
 <template>
@@ -14,21 +14,15 @@ const { team } = storeToRefs(useTeamStore());
       <Button label="Publish" severity="contrast" />
     </div>
 
-    <Panel header="Project details" class="mx-auto max-w-4xl mt-4">
-      <ul class="list-disc">
-        <li v-for="(item, key) in team" class="flex py-3 border-b border-secondary">
-          <div class="w-1/3 capitalize">{{ key.replace(/([A-Z])/g, ' $1').trim() }}</div>
+    <ScoreProductDetails class="!my-6" />
+    <ScoreSubjectScore class="!my-6" />
 
-          <!-- On Date -->
-          <div v-if="key === 'date'">{{ item.toDateString() }}</div>
-
-          <!-- On array -->
-          <div v-else-if="key === 'reviewers'">
-            <span v-for="name of item" class="me-3">{{ name }}</span>
-          </div>
-          <div v-else>{{ item }}</div>
-        </li>
-      </ul>
+    <Panel class="!max-w-4xl !mx-auto">
+      <div class="min-h-48 !flex !flex-col !justify-center !items-center">
+        <MDC v-if="AIScore?.output" :value="AIScore.output" tag="article" />
+        <p v-if="!AIScore?.output">Generate written code review</p>
+        <Button v-if="!AIScore?.output" label="test" class="mx-auto !px-8 mt-3" severity="contrast" @click="useScoreStore().createReview()" />
+      </div>
     </Panel>
   </div>
 </template>
