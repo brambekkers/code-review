@@ -10,9 +10,12 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/icon": "^1.4.7",
+    "@nuxt/image": "^1.8.0",
     "@nuxtjs/mdc": "^0.8.3",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@pinia/nuxt": "^0.5.3",
+    "@primevue/nuxt-module": "^4.0.4",
     "@primevue/themes": "^4.0.4",
     "firebase": "^10.13.1",
     "nuxt": "^3.13.1",
@@ -22,8 +25,6 @@
     "vue": "^3.5.3"
   },
   "devDependencies": {
-    "@nuxt/icon": "^1.4.7",
-    "@primevue/nuxt-module": "^4.0.4",
     "@tailwindcss/typography": "^0.5.14"
   }
 }

@@ -1,34 +1,33 @@
-import Aura from '@primevue/themes/aura';
+import Aura from '@primevue/themes/aura'
 
-console.log(process.env.FB_API_KEY);
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: false,
   compatibilityDate: '2024-04-03',
   css: ['~/assets/css/main.css'],
   future: {
-    compatibilityVersion: 4,
+    compatibilityVersion: 4
   },
   srcDir: 'src/',
   devtools: { enabled: true },
   imports: {
-    dirs: ['stores'],
+    dirs: ['stores']
   },
-  modules: ['@nuxtjs/tailwindcss', '@primevue/nuxt-module', '@nuxt/icon', '@pinia/nuxt', 'nuxt-vuefire', '@nuxtjs/mdc'],
+  modules: ['@nuxtjs/tailwindcss', '@primevue/nuxt-module', '@nuxt/icon', '@pinia/nuxt', 'nuxt-vuefire', '@nuxtjs/mdc', '@nuxt/image'],
   primevue: {
     options: {
       theme: {
         preset: Aura,
         options: {
           darkModeSelector: '.dark',
-          cssLayer: false,
-        },
-      },
-    },
+          cssLayer: false
+        }
+      }
+    }
   },
   vuefire: {
     auth: {
-      enabled: true,
+      enabled: true
     },
     config: {
       apiKey: 'AIzaSyBPwpOPDoJ6kheG_qDYxJFdVk3PtLUrca0',
@@ -37,7 +36,7 @@ export default defineNuxtConfig({
       storageBucket: 'code-review-f53d6.appspot.com',
       messagingSenderId: '328549315397',
       appId: '1:328549315397:web:e9da32c9f766b0cf24442c',
-      measurementId: 'G-4C9D38WGLW',
-    },
-  },
-});
+      measurementId: 'G-4C9D38WGLW'
+    }
+  }
+})
