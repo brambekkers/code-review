@@ -1,5 +1,5 @@
 import type { SubjectsKeys } from '@/types/review';
-import { doc, setDoc, getDoc } from 'firebase/firestore';
+import { doc } from 'firebase/firestore';
 
 export const useScoreStore = defineStore('score', () => {
   // Generate unique id based on time
@@ -43,9 +43,8 @@ export const useScoreStore = defineStore('score', () => {
   const AIScore = useDocument(docRef);
 
   const createReview = async () => {
-    console.log(id);
     try {
-      await setDoc(docRef, { review: JSON.stringify(review.value) });
+      console.log('Creating review...');
     } catch (error) {
       console.log(error);
     }
