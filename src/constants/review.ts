@@ -1,11 +1,12 @@
-import qualityImg from '../assets/img/subjects/quality.avif'
-import dependenciesImg from '../assets/img/subjects/dependencies.avif'
-import setupImg from '../assets/img/subjects/setup.avif'
-import technologyImg from '../assets/img/subjects/setup.avif'
-import stylingImg from '../assets/img/subjects/styling.avif'
-import bestPracticesImg from '../assets/img/subjects/best-practices.avif'
-import testingImg from '../assets/img/subjects/testing.avif'
-import accessibilityImg from '../assets/img/subjects/accessibility.avif'
+import qualityImg from '../assets/img/subjects/quality.avif';
+import dependenciesImg from '../assets/img/subjects/dependencies.avif';
+import setupImg from '../assets/img/subjects/setup.avif';
+import technologyImg from '../assets/img/subjects/setup.avif';
+import stylingImg from '../assets/img/subjects/styling.avif';
+import bestPracticesImg from '../assets/img/subjects/best-practices.avif';
+import testingImg from '../assets/img/subjects/testing.avif';
+import accessibilityImg from '../assets/img/subjects/accessibility.avif';
+import versioningImg from '../assets/img/subjects/versioning.avif';
 
 export const review = {
   qualityGates: {
@@ -21,34 +22,34 @@ export const review = {
           {
             question: 'Is ESlint enabled?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the configuration in one file?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Does the configuration deviate?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there in-line rule disablements?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there ESlint errors?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there ESlint warnings?',
             score: 0,
-            comment: ''
-          }
-        ]
+            comment: '',
+          },
+        ],
       },
       {
         title: 'SonarQube',
@@ -58,39 +59,39 @@ export const review = {
           {
             question: 'Is SonarQube enabled?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the correct Quality gate enabled?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there Blocker issues?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there Critical issues?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there Major issues?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there Minor issues?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: "Are there incorrectly marked 'false-positives' or 'wont-fix'?",
             score: 0,
-            comment: ''
-          }
-        ]
+            comment: '',
+          },
+        ],
       },
       {
         title: 'HP Fortify',
@@ -100,29 +101,29 @@ export const review = {
           {
             question: 'Is HP Fortify enabled?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there Critical issues?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there High severity issues?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there Medium severity issues?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there Low severity issues?',
             score: 0,
-            comment: ''
-          }
-        ]
+            comment: '',
+          },
+        ],
       },
       {
         title: 'NexusIQ',
@@ -132,26 +133,26 @@ export const review = {
           {
             question: 'Is NexusIQ enabled?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there Blocking (threat level >=8) violations?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there Future Blocking (threat level 7) violations?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there other violations?',
             score: 0,
-            comment: ''
-          }
-        ]
-      }
-    ]
+            comment: '',
+          },
+        ],
+      },
+    ],
   },
   dependencies: {
     title: 'Dependencies',
@@ -166,49 +167,49 @@ export const review = {
           {
             question: 'Is the latest supported version of Vue used?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the latest supported version of Node used?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are the Emerald Web Components used?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the @aab/sc-vue-cli-plugin-ibrebuild used?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there unused dependencies used?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are dependencies and devDependencies mixed? (Testcafe, playwright, babel, ... in dependencies)',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there unsupported dependencies used?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there deprecated dependencies used?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is semver used correctly?',
             score: 0,
-            comment: ''
-          }
-        ]
+            comment: '',
+          },
+        ],
       },
       {
         title: 'Lifecycle management',
@@ -217,11 +218,11 @@ export const review = {
           {
             question: 'Are there outdated dependencies present?',
             score: 0,
-            comment: ''
-          }
-        ]
-      }
-    ]
+            comment: '',
+          },
+        ],
+      },
+    ],
   },
   setup: {
     title: 'Project set-up',
@@ -236,29 +237,29 @@ export const review = {
           {
             question: 'Does the folder structure deviate from the default scaffolded project?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are the folders and files semantically named?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the folder- and file name spacing consistent?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there missing folders?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are concerns separated logically?',
             score: 0,
-            comment: ''
-          }
-        ]
+            comment: '',
+          },
+        ],
       },
       {
         title: 'Protected files from @aab/cli',
@@ -268,11 +269,11 @@ export const review = {
           {
             question: 'Are protected files modified?',
             score: 0,
-            comment: ''
-          }
-        ]
-      }
-    ]
+            comment: '',
+          },
+        ],
+      },
+    ],
   },
   styling: {
     title: 'Styling',
@@ -287,24 +288,24 @@ export const review = {
           {
             question: 'Are the Emerald Web Components used?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there unused Emerald components and imports present?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there local UI components present?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there third-party UI components present?',
             score: 0,
-            comment: ''
-          }
-        ]
+            comment: '',
+          },
+        ],
       },
       {
         title: 'Emerald styling',
@@ -314,41 +315,41 @@ export const review = {
           {
             question: 'Is the @aab/sc-styles-emerald component used?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Does the project deviate from the Emerald Design System style guide?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is custom styling kept to a minimum?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is inline styling avoided?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are stylesheets logically located?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the old emerald-global present?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the old CSS-in-JS stack present?',
             score: 0,
-            comment: ''
-          }
-        ]
-      }
-    ]
+            comment: '',
+          },
+        ],
+      },
+    ],
   },
   technology: {
     title: 'Technology stack usage',
@@ -363,300 +364,299 @@ export const review = {
           {
             question: 'Is text interpolation used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
-            question:
-              'Are attributes bound correctly with the v-bind shorthand (:) which is preferred over its longer version?',
+            question: 'Are attributes bound correctly with the v-bind shorthand (:) which is preferred over its longer version?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are Boolean attributes bound correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are objects of attributes bound correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are JavaScript expressions inside of data bindings used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are functions called correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is v-html avoided?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is reactive state declared correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are methods declared correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is reactive() used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is ref() used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are computed properties used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are computed properties side-effect free?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are computed properties immutable?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is class binding used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is style binding avoided?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are the v-if, v-else-if, and v-else directives used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are the directives used in combination with the <template> tag to toggle more than one element?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the v-show directive used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are v-if and v-for on the same element avoided?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the v-cloak directive avoided?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the v-for directive used correctly for an array?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the v-for directive used correctly for an object?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is v-for used in combination with the <template> tag to render a block of multiple elements?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are v-for and v-if on the same element avoided?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the key attribute used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are events handled using the v-on shorthand (@) which is preferred over its longer version?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: "Are inline handlers' length and complexity acceptable?",
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are method handlers used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are original DOM events passed correctly to handlers?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are event modifiers used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are key modifiers used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are mouse button modifiers used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is v-model used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are modifiers used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are lifecycle hooks used correctly for the options API?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are lifecycle hooks used correctly for the Composition API?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is data retrieval done in the correct lifecycle hook?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is DOM manipulation done in the correct lifecycle hook?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the amount of code in lifecycle hooks acceptable?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are watchers used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are deep watchers used cautiously?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are eager watchers used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is watchEffect() used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is callback flush timing used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are watchers stopped correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are refs used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are refs accessed correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are refs inside v-for used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are function refs used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are refs on components used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are composables used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: "Is the 'use' naming convention followed?",
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are input arguments handled correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are values returned correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are side effects handled correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are the usage restrictions kept in mind?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are composables correctly used for Code Organization?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are mixins avoided?',
             score: 0,
-            comment: ''
-          }
-        ]
+            comment: '',
+          },
+        ],
       },
       {
         title: 'Vue Components essentials',
@@ -666,109 +666,109 @@ export const review = {
           {
             question: 'Are components defined correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are components registered correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the PascalCase name casing used?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are props defined correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the camelCase name casing used for defining props?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are props used as kebab-case attributes?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is prop validation used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Do props have a type defined?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Do props have default value defined?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are events defined correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the camelCase name casing used for defining events?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the kebab-case name casing used for listening on events?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are events emitted correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are events listened to correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are event arguments passed correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are events explicitly declared using the emits option?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is event validation used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are slots used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are named slots used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the v-slot shorthand (#) used which is preferred over its longer version?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are there renderless components present?',
             score: 0,
-            comment: ''
-          }
-        ]
+            comment: '',
+          },
+        ],
       },
       {
         title: 'Routing',
@@ -778,66 +778,66 @@ export const review = {
           {
             question: 'Are routes defined correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are named routes used which is the preferred way?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is router-link or router.push used to navigate?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the namespacing of routes consistent?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is there a fallback route in place?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is hashmode used?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is createWebHashHistory used?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are nested routes used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are navigation guards used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Is the meta field used correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are props passed correctly?',
             score: 0,
-            comment: ''
+            comment: '',
           },
           {
             question: 'Are the router files logically placed?',
             score: 0,
-            comment: ''
-          }
-        ]
-      }
-    ]
+            comment: '',
+          },
+        ],
+      },
+    ],
   },
   bestPractices: {
     title: 'Best Practices',
@@ -870,8 +870,8 @@ export const review = {
           { question: 'Is formatting present?', score: 0, comment: '' },
           { question: 'Is consistent name spacing present?', score: 0, comment: '' },
           { question: 'Are high complexity functions avoided?', score: 0, comment: '' },
-          { question: 'Are large expressions in templates avoided?', score: 0, comment: '' }
-        ]
+          { question: 'Are large expressions in templates avoided?', score: 0, comment: '' },
+        ],
       },
       {
         title: 'Documentation',
@@ -880,8 +880,8 @@ export const review = {
           { question: 'Are inline comments present?', score: 0, comment: '' },
           { question: 'Are JSdoc comments present?', score: 0, comment: '' },
           { question: 'Is there a proper changelog?', score: 0, comment: '' },
-          { question: 'Is there a proper readme?', score: 0, comment: '' }
-        ]
+          { question: 'Is there a proper readme?', score: 0, comment: '' },
+        ],
       },
       {
         title: 'Security',
@@ -903,10 +903,10 @@ export const review = {
           { question: 'Are identification and authentication failures avoided?', score: 0, comment: '' },
           { question: 'Are software and data integrity failures avoided?', score: 0, comment: '' },
           { question: 'Are security logging and monitoring failures present?', score: 0, comment: '' },
-          { question: 'Is server-side request forgery avoided?', score: 0, comment: '' }
-        ]
-      }
-    ]
+          { question: 'Is server-side request forgery avoided?', score: 0, comment: '' },
+        ],
+      },
+    ],
   },
   testing: {
     title: 'Testing',
@@ -946,8 +946,8 @@ export const review = {
           { question: 'Are skipped test(suite)s avoided?', score: 0, comment: '' },
           { question: 'Is the ibrs-test-helpers module used?', score: 0, comment: '' },
           { question: 'Are promises correctly handled?', score: 0, comment: '' },
-          { question: 'Is the recommended way of unit testing followed?', score: 0, comment: '' }
-        ]
+          { question: 'Is the recommended way of unit testing followed?', score: 0, comment: '' },
+        ],
       },
       {
         title: 'Functional testing',
@@ -965,8 +965,8 @@ export const review = {
           { question: 'Are critical flows tested?', score: 0, comment: '' },
           { question: 'Is user interaction tested?', score: 0, comment: '' },
           { question: 'Are skipped test(suite)s avoided?', score: 0, comment: '' },
-          { question: 'Are page object models from the Emerald Web Components used?', score: 0, comment: '' }
-        ]
+          { question: 'Are page object models from the Emerald Web Components used?', score: 0, comment: '' },
+        ],
       },
       {
         title: 'E2E testing',
@@ -982,8 +982,8 @@ export const review = {
         questions: [
           { question: 'Are E2E tests present?', score: 0, comment: '' },
           { question: 'Are critical flows tested?', score: 0, comment: '' },
-          { question: 'Are the E2E tests triggered on the acceptance environment?', score: 0, comment: '' }
-        ]
+          { question: 'Are the E2E tests triggered on the acceptance environment?', score: 0, comment: '' },
+        ],
       },
       {
         title: 'Performance testing',
@@ -1001,10 +1001,10 @@ export const review = {
         questions: [
           { question: 'Is performance testing enabled?', score: 0, comment: '' },
           { question: 'Is the performance testing result acceptable?', score: 0, comment: '' },
-          { question: 'Is the size of the bundled application acceptable?', score: 0, comment: '' }
-        ]
-      }
-    ]
+          { question: 'Is the size of the bundled application acceptable?', score: 0, comment: '' },
+        ],
+      },
+    ],
   },
   accessibility: {
     title: 'Accessibility',
@@ -1019,13 +1019,107 @@ export const review = {
                         </ul>`,
         questions: [
           { question: 'Are automated accessibility tests present?', score: 0, comment: '' },
-          { question: 'Is the vuejs accessibility eslint ruleset enabled?', score: 0, comment: '' }
-        ]
+          { question: 'Is the vuejs accessibility eslint ruleset enabled?', score: 0, comment: '' },
+        ],
       },
       {
         title: 'Screenreader test',
-        questions: [{ question: 'Does the application pass a manual screenreader test?', score: 0, comment: '' }]
-      }
-    ]
-  }
-}
+        questions: [{ question: 'Does the application pass a manual screenreader test?', score: 0, comment: '' }],
+      },
+    ],
+  },
+  versioning: {
+    title: 'Versioning',
+    img: versioningImg, // Ensure you have an appropriate image for versioning
+    description: 'Ensure that the project follows best practices for version control and versioning.',
+    topics: [
+      {
+        title: 'Merge Quality',
+        description: `<ul>
+                        <li>Ensure that merges are clean and do not contain unnecessary commits.</li>
+                        <li>Check if conflicts are resolved properly.</li>
+                        <li>Provide examples of problematic merge issues.</li>
+                      </ul>`,
+        questions: [
+          { question: 'Are merges clean and concise?', score: 0, comment: '' },
+          { question: 'Are merge conflicts resolved appropriately?', score: 0, comment: '' },
+          { question: 'Is unnecessary merging avoided?', score: 0, comment: '' },
+        ],
+      },
+      {
+        title: 'Commit Message Quality',
+        description: `<ul>
+                        <li>Ensure that commit messages are clear, concise, and meaningful.</li>
+                        <li>Follow the conventional commit guidelines.</li>
+                      </ul>`,
+        questions: [
+          { question: 'Are commit messages clear and meaningful?', score: 0, comment: '' },
+          { question: 'Do commit messages follow conventional commit guidelines?', score: 0, comment: '' },
+          { question: 'Are commit messages concise?', score: 0, comment: '' },
+        ],
+      },
+      {
+        title: 'Commit Linting',
+        description: `<ul>
+                        <li>Ensure that commit messages are linted to follow a consistent style.</li>
+                        <li>Check if automated tools are used for commit linting.</li>
+                      </ul>`,
+        questions: [
+          { question: 'Is commit linting enforced?', score: 0, comment: '' },
+          { question: 'Are automated tools used for commit linting?', score: 0, comment: '' },
+          { question: 'Are linting errors in commit messages avoided?', score: 0, comment: '' },
+        ],
+      },
+      {
+        title: 'Semantic Versioning Quality',
+        description: `<ul>
+                        <li>Ensure that semantic versioning is followed properly.</li>
+                        <li>Check if version increments are meaningful and follow the standard (MAJOR.MINOR.PATCH).</li>
+                      </ul>`,
+        questions: [
+          { question: 'Is semantic versioning followed?', score: 0, comment: '' },
+          { question: 'Are version increments meaningful?', score: 0, comment: '' },
+          { question: 'Do versions follow the MAJOR.MINOR.PATCH format?', score: 0, comment: '' },
+        ],
+      },
+      {
+        title: 'Change-log Quality',
+        description: `<ul>
+                        <li>Ensure that the change-log is updated and well-maintained.</li>
+                        <li>Check if changes are documented clearly.</li>
+                      </ul>`,
+        questions: [
+          { question: 'Is the change-log well-maintained?', score: 0, comment: '' },
+          { question: 'Are changes documented clearly in the change-log?', score: 0, comment: '' },
+          { question: 'Is the change-log updated regularly?', score: 0, comment: '' },
+        ],
+      },
+      {
+        title: 'PR Discipline',
+        description: `<ul>
+                        <li>Ensure that pull requests (PRs) follow best practices.</li>
+                        <li>Check if PRs are small, focused, and reviewed properly.</li>
+                        <li>Provide examples of good and bad PR practices.</li>
+                      </ul>`,
+        questions: [
+          { question: 'Are PRs small and focused?', score: 0, comment: '' },
+          { question: 'Are PRs reviewed properly?', score: 0, comment: '' },
+          { question: 'Are best practices followed in PRs?', score: 0, comment: '' },
+        ],
+      },
+      {
+        title: 'Branching Quality',
+        description: `<ul>
+                        <li>Ensure that the branching strategy is effective and branches are kept updated with main branches.</li>
+                        <li>Check if rebasing is used where appropriate.</li>
+                        <li>Provide examples of good branching practices.</li>
+                      </ul>`,
+        questions: [
+          { question: 'Is the branching strategy effective?', score: 0, comment: '' },
+          { question: 'Are branches regularly updated with main branches?', score: 0, comment: '' },
+          { question: 'Is rebasing used where appropriate?', score: 0, comment: '' },
+        ],
+      },
+    ],
+  },
+};
