@@ -17,12 +17,9 @@ const subject = computed(() => review.value[id]);
       </div>
     </section>
     <h3 class="font-bold text-xl text-gray-800 mt-6">Topics</h3>
-    <Fieldset v-for="topic of subject.topics" :key="topic.title" :legend="topic.title" toggleable class="!mb-5">
+    <Fieldset v-for="topic of subject.topics" :key="topic.title" :legend="topic.title" toggleable class="!mb-5 !bg-slate-50" pt:legend="!bg-transparent">
       <section class="flex flex-col my-2">
-        <div
-          v-html="topic?.description"
-          class="border-2 border-dashed border-surface-200 h-full rounded bg-slate-50 font-medium p-5 [&>*]:list-disc [&>*]:ms-4"
-        />
+        <div v-html="topic?.description" class="border-2 border-dashed border-surface-200 h-full rounded bg-white font-medium p-5 [&>*]:list-disc [&>*]:ms-4" />
       </section>
       <ReviewQuestionRow v-for="(question, i) of topic.questions" v-model="topic.questions[i]" class="my-3" :key="question.title" />
     </Fieldset>

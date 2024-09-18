@@ -1,8 +1,17 @@
 <script setup lang="ts">
+const { team } = storeToRefs(useTeamStore());
 const { review } = storeToRefs(useReviewStore());
 
 const exportData = () => {
-  const jsonString = JSON.stringify(review.value, null, 2);
+  const jsonString = JSON.stringify(
+    {
+      review: review.value,
+      team: team.value,
+    },
+    null,
+    2,
+  );
+
   const blob = new Blob([jsonString], { type: 'application/json' });
   const a = document.createElement('a');
   const url = URL.createObjectURL(blob);

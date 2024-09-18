@@ -31,6 +31,7 @@ export const useReviewStore = defineStore('review', () => {
   const totalQuestions = computed(() => subjects.value.reduce((acc, subject) => acc + subject.totalQuestions, 0));
   const answeredQuestions = computed(() => subjects.value.reduce((acc, subject) => acc + subject.score, 0));
   const answeredPercentage = computed(() => (answeredQuestions.value / totalQuestions.value) * 100);
+  const questionsLeft = computed(() => totalQuestions.value - answeredQuestions.value);
 
   const selectedSubject = computed(() => {
     if (!currentSubject.value) return null;
@@ -79,6 +80,8 @@ export const useReviewStore = defineStore('review', () => {
     selectedTopic,
     selectedQuestion,
     answeredPercentage,
+    totalQuestions,
+    questionsLeft,
     allQuestionsScored,
     nextQuestion,
   };

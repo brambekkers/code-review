@@ -1,6 +1,6 @@
 <script setup>
 const showReviewModal = ref(false);
-const { subjects, answeredPercentage } = storeToRefs(useReviewStore());
+const { subjects, answeredPercentage, questionsLeft, totalQuestions } = storeToRefs(useReviewStore());
 </script>
 
 <template>
@@ -20,14 +20,18 @@ const { subjects, answeredPercentage } = storeToRefs(useReviewStore());
       </p>
 
       <div class="mx-auto my-8">
-        <Button label="Start review" severity="contrast" class="!px-12 !py-5 !text-xl" @click="showReviewModal = true" />
+        <OverlayBadge severity="danger" :value="questionsLeft">
+          <Button severity="contrast" class="!px-12 !py-5 !text-xl" @click="showReviewModal = true">
+            {{ totalQuestions === questionsLeft ? 'Start review' : 'Continue review' }}
+          </Button>
+        </OverlayBadge>
       </div>
 
       <label class="text-sm text-slate-500 flex justify-between items-bottom" for="progressBar">
         Progress
         <div class="font-bold">{{ Math.round(answeredPercentage) }}%</div>
       </label>
-      <ProgressBar id="progressBar" :value="answeredPercentage"> {{}} </ProgressBar>
+      <ProgressBar id="progressBar" :value="answeredPercentage"> </ProgressBar>
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-8">
       <div v-for="subject of subjects" class="group">

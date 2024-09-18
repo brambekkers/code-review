@@ -1,10 +1,27 @@
 <script setup lang="ts">
 const { review } = storeToRefs(useReviewStore());
+const { team } = storeToRefs(useTeamStore());
 
 const modalOpen = ref(false);
+const toast = useToast();
 
-const upload = (event: Event) => {
-  const input = event.target as HTMLInputElement;
+const showSuccessMessage = () => {
+  toast.add({ severity: 'success', summary: 'Import success', detail: 'You successfully imported a review file', life: 3000 });
+};
+
+const showErrorMessage = () => {
+  toast.add({ severity: 'error', summary: 'Error', detail: 'There was an error while uploading a review file', life: 3000 });
+};
+
+const isReviewFile = (content: any) => {
+  const keys = Object.keys(review.value);
+  const newKeys = Object.keys(content.review);
+  const hasAllTheKeysKeys = keys.filter((key) => !content.review[key]).length === 0;
+  const hasIncorrectKeys = newKeys.some((key) => !review.value[key]);
+  return content && hasAllTheKeysKeys && !hasIncorrectKeys;
+};
+
+const upload = (input: HTMLInputElement) => {
   if (!input.files || input.files.length === 0) {
     console.log('No file selected');
     return;
@@ -15,10 +32,17 @@ const upload = (event: Event) => {
 
   reader.onload = (e) => {
     try {
-      const jsonContent = JSON.parse(e.target?.result as string);
-      review.value = jsonContent;
+      const content = JSON.parse(e.target?.result as string);
+      if (!isReviewFile(content)) throw new Error('Invalid review file');
+
+      review.value = content.review;
+      team.value = content.team;
+
+      modalOpen.value = false;
+      showSuccessMessage();
     } catch (error) {
       console.error('Error parsing JSON:', error);
+      showErrorMessage();
     }
   };
 
@@ -32,10 +56,21 @@ const upload = (event: Event) => {
 
 <template>
   <div>
+    <Toast />
     <Button label="Import" class="!px-6 !py-3" severity="contrast" @click="modalOpen = !modalOpen" />
-    <Dialog v-model:visible="modalOpen" modal header="Import" class="min-w-[350px]" :draggable="false">
-      <div class="w-full h-full flex items-center justify-center">
-        <FileUpload mode="basic" accept=".json" auto :multiple="false" :maxFileSize="1000000" customUpload @uploader="upload" />
+    <Dialog v-model:visible="modalOpen" modal header="Import" class="min-w-[350px] text-center" :draggable="false" pt:header="!pb-1">
+      Select a review file to import
+      <div class="w-full h-full flex items-center justify-center mt-2">
+        <FileUpload
+          mode="basic"
+          accept=".json"
+          auto
+          :multiple="false"
+          :maxFileSize="1000000"
+          customUpload
+          @uploader="upload"
+          pt:pc-choose-button:root="!bg-black border !border-black !outline-black text-white"
+        />
       </div>
     </Dialog>
   </div>

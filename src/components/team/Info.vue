@@ -7,8 +7,7 @@ const nameField = ref('');
 const addReviewer = () => {
   if (!nameField.value) return;
   if (reviewers.value.includes(nameField.value)) return;
-
-  reviewers.value.push(nameField.value);
+  team.value.reviewers.push(nameField.value);
   nameField.value = '';
 };
 </script>
@@ -26,7 +25,7 @@ const addReviewer = () => {
         <div class="text-sm grid grid-cols-1 md:grid-cols-2 gap-4">
           <div v-for="(item, key) of team">
             <template v-if="key === 'reviewers'"> </template>
-            <template v-if="key === 'date'">
+            <template v-else-if="key === 'date'">
               <div class="flex flex-col gap-2">
                 <label :for="key" class="text-xs font-bold -mb-2 capitalize">{{ key.replace(/([A-Z])/g, ' $1').trim() }}</label>
                 <DatePicker :id="key" v-model="team[key]" />
