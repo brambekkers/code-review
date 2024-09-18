@@ -1030,7 +1030,7 @@ export const review = {
   },
   versioning: {
     title: 'Versioning',
-    img: versioningImg, // Ensure you have an appropriate image for versioning
+    img: versioningImg,
     description: 'Ensure that the project follows best practices for version control and versioning.',
     topics: [
       {
@@ -1080,6 +1080,12 @@ export const review = {
           { question: 'Is semantic versioning followed?', score: 0, comment: '' },
           { question: 'Are version increments meaningful?', score: 0, comment: '' },
           { question: 'Do versions follow the MAJOR.MINOR.PATCH format?', score: 0, comment: '' },
+          {
+            question:
+              'Are semantic versions generated according to standards (conventional-commits)? For example: Breaking changes -> major, Feature -> minor, Bugfix -> patch',
+            score: 0,
+            comment: '',
+          },
         ],
       },
       {
@@ -1092,6 +1098,7 @@ export const review = {
           { question: 'Is the change-log well-maintained?', score: 0, comment: '' },
           { question: 'Are changes documented clearly in the change-log?', score: 0, comment: '' },
           { question: 'Is the change-log updated regularly?', score: 0, comment: '' },
+          { question: 'Are change-logs generated on merge of a feature branch?', score: 0, comment: '' },
         ],
       },
       {
@@ -1118,6 +1125,7 @@ export const review = {
           { question: 'Is the branching strategy effective?', score: 0, comment: '' },
           { question: 'Are branches regularly updated with main branches?', score: 0, comment: '' },
           { question: 'Is rebasing used where appropriate?', score: 0, comment: '' },
+          { question: 'Rebase is being used to avoid merges from main branches to feature branches and to keep the branches updated?', score: 0, comment: '' },
         ],
       },
     ],
