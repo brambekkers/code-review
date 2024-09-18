@@ -32,7 +32,7 @@ export const useScoreStore = defineStore('score', () => {
 
     let maxScore = 0;
     let score = subject.topics.reduce((acc, topic) => {
-      maxScore += topic.questions.length * 7;
+      maxScore += topic.questions.length * 6;
       const topicScore = topic.questions.reduce((acc, question) => acc + (question.score || 0), 0);
       return acc + topicScore;
     }, 0);
