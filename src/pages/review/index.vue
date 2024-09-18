@@ -21,7 +21,7 @@ const { subjects, answeredPercentage, questionsLeft, totalQuestions } = storeToR
 
       <div class="mx-auto my-8">
         <OverlayBadge severity="danger" :value="questionsLeft">
-          <Button severity="contrast" class="!px-12 !py-5 !text-xl" @click="showReviewModal = true">
+          <Button severity="contrast" class="!px-12 !py-5 !text-xl" @click="showReviewModal = true" :disabled="answeredPercentage === 100">
             {{ totalQuestions === questionsLeft ? 'Start review' : 'Continue review' }}
           </Button>
         </OverlayBadge>
