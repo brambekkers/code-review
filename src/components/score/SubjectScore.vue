@@ -9,7 +9,7 @@ const { subjectScores } = storeToRefs(useScoreStore());
         <div class="flex justify-between items-end">
           <p class="capitalize font-bold">{{ formatKey(key) }}</p>
           <div>
-            <div class="text-sm font-bold">{{ formatPercentage(item.percentage) }}</div>
+            <div class="text-sm font-bold">{{ formatPercentage(item.percentage, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }}</div>
           </div>
         </div>
         <ProgressBar :value="item.percentage" class="!h-4"> {{ item.score }}/ {{ item.maxScore }} </ProgressBar>

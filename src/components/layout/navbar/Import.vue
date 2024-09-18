@@ -35,6 +35,7 @@ const upload = (input: HTMLInputElement) => {
       const content = JSON.parse(e.target?.result as string);
       if (!isReviewFile(content)) throw new Error('Invalid review file');
 
+      content.team.date = new Date(content.team.date);
       review.value = content.review;
       team.value = content.team;
 

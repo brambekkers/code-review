@@ -1,13 +1,16 @@
 import type { SubjectsKeys } from '@/types/review';
-import { doc } from 'firebase/firestore';
 
 export const useScoreStore = defineStore('score', () => {
-  // Generate unique id based on time
-  const id = uniqueId();
-  const db = useFirestore();
-  const docRef = doc(db, `generate/${id}`);
-
   const { review } = storeToRefs(useReviewStore());
+
+  const getScoreRating = (score: number) => {
+    if (score >= 90) return 'Excellent';
+    if (score >= 80) return 'Great';
+    if (score >= 70) return 'Good';
+    if (score >= 60) return 'Okay';
+    if (score >= 50) return 'Bad';
+    return 'Very Bad';
+  };
 
   const subjectScores = computed(() => {
     const subjectsKeys = Object.keys(review.value) as SubjectsKeys[];
@@ -19,6 +22,25 @@ export const useScoreStore = defineStore('score', () => {
     }
 
     return score;
+  });
+
+  const totalScore = computed(() => {
+    let maxScore = 0;
+    let totalScore = 0;
+    const scores = Object.values(subjectScores.value);
+
+    for (let subject of scores) {
+      maxScore += subject.maxScore;
+      totalScore += subject.score;
+    }
+
+    const percentage = calcPercentage(maxScore, totalScore);
+    return {
+      totalScore,
+      maxScore,
+      percentage,
+      score: getScoreRating(percentage),
+    };
   });
 
   const scorePerSubject = (subjectKey: SubjectsKeys) => {
@@ -40,19 +62,8 @@ export const useScoreStore = defineStore('score', () => {
     return { score, maxScore, percentage };
   };
 
-  const AIScore = useDocument(docRef);
-
-  const createReview = async () => {
-    try {
-      console.log('Creating review...');
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return {
     subjectScores,
-    createReview,
-    AIScore,
+    totalScore,
   };
 });

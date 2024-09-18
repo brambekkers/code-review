@@ -1,4 +1,5 @@
 export const team = {
+  teamName: '',
   applicationName: '',
   oarId: '',
   teamClarityPage: '',

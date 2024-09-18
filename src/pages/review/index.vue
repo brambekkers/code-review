@@ -27,11 +27,11 @@ const { subjects, answeredPercentage, questionsLeft, totalQuestions } = storeToR
         </OverlayBadge>
       </div>
 
-      <label class="text-sm text-slate-500 flex justify-between items-bottom" for="progressBar">
-        Progress
+      <label class="text-sm text-slate-500 flex justify-between item-end -mb-2" for="progressBar">
+        Your review progress
         <div class="font-bold">{{ Math.round(answeredPercentage) }}%</div>
       </label>
-      <ProgressBar id="progressBar" :value="answeredPercentage"> </ProgressBar>
+      <ProgressBar id="progressBar" :value="answeredPercentage" :show-value="false"> </ProgressBar>
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-8">
       <div v-for="subject of subjects" class="group">

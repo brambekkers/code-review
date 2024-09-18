@@ -1,6 +1,4 @@
-<script setup>
-const { AIScore } = storeToRefs(useScoreStore());
-</script>
+<script setup></script>
 
 <template>
   <div>
@@ -15,8 +13,9 @@ const { AIScore } = storeToRefs(useScoreStore());
     </div>
 
     <ScoreProductDetails class="!my-6" />
+    <ScoreIntroduction class="!my-6" />
     <ScoreSubjectScore class="!my-6" />
 
-    <Fieldset class="!max-w-4xl !mx-auto" legend="Review"> test </Fieldset>
+    <Fieldset class="!max-w-4xl !mx-auto" legend="Review"> Rest of the written review... </Fieldset>
   </div>
 </template>
