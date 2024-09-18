@@ -10,7 +10,7 @@ const menuitems = [
   },
   {
     title: 'Score',
-    path: '/Score',
+    path: '/score',
   },
   {
     title: 'Justification',
@@ -18,6 +18,7 @@ const menuitems = [
   },
 ];
 
+const route = useRoute();
 const open = ref(false);
 </script>
 
@@ -48,7 +49,11 @@ const open = ref(false);
       <nav class="w-full lg:w-auto mt-2 lg:flex lg:mt-0" :class="{ block: open, hidden: !open }">
         <ul class="flex flex-col lg:flex-row lg:gap-3">
           <li v-for="item of menuitems">
-            <nuxt-link :to="item.path" class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
+            <nuxt-link
+              :to="item.path"
+              class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900"
+              :class="{ 'font-semibold border-b': route.path.toLowerCase() === item.path }"
+            >
               {{ item.title }}
             </nuxt-link>
           </li>
