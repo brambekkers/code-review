@@ -8,6 +8,7 @@ const tiers = ref([
   { code: 'D ', name: 'Okay', score: 3, color: '#fdf7d6', textColor: 'black' },
   { code: 'E', name: 'Bad', score: 2, color: '#de6560', textColor: 'white' },
   { code: 'F', name: 'Very Bad', score: 1, color: '#ca3d3f', textColor: 'white' },
+  { code: 'X', name: 'Not applicable', score: 0, color: '#e2e8f0', textColor: 'black' },
 ]);
 
 const valueData = (score: number) => {
@@ -23,7 +24,7 @@ const avatarStyle = (score: number) => ({
 <template>
   <Select v-model="modelValue" :options="tiers" option-label="name" option-value="score">
     <template #value="{ value }: { value: number }">
-      <div v-if="value" class="flex items-center">
+      <div v-if="typeof value === 'number'" class="flex items-center">
         <Avatar :label="valueData(value)?.code" :style="avatarStyle(value)" />
         <p class="ms-1">- {{ valueData(value)?.name }}</p>
       </div>

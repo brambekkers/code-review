@@ -12,15 +12,15 @@
   "dependencies": {
     "@nuxt/icon": "^1.4.7",
     "@nuxtjs/tailwindcss": "^6.12.1",
-    "@pinia/nuxt": "^0.5.3",
-    "@primevue/nuxt-module": "^4.0.4",
-    "@primevue/themes": "^4.0.4",
-    "firebase": "^10.13.1",
+    "@pinia/nuxt": "^0.5.5",
+    "@primevue/nuxt-module": "^4.1.0",
+    "@primevue/themes": "^4.1.0",
+    "firebase": "^10.14.0",
     "nuxt": "^3.13.1",
     "nuxt-vuefire": "^1.0.4",
-    "pinia": "^2.2.2",
-    "primevue": "^4.0.5",
-    "vue": "^3.5.3"
+    "pinia": "^2.2.4",
+    "primevue": "^4.1.0",
+    "vue": "^3.5.11"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.14"
