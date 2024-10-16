@@ -10,13 +10,29 @@ export const useReviewStore = defineStore('review', () => {
 
   const subjects = computed(() =>
     Object.entries(review.value).map(([key, subject]) => {
+      // Calculate the score for the subject
       const score = subject?.topics?.reduce((acc, topic) => {
-        const answered = topic.questions?.reduce((acc, question) => acc + (question.score ? 1 : 0), 0);
-        return acc + answered;
+        const answered = topic.questions?.reduce((acc, question) => {
+          const maxScore = (question.score ?? 0) * question.weight;
+          return acc + (question.score ? 1 : 0);
+        }, 0);
+
+        const topicScore = topic.applicable ? answered : 0;
+        return acc + topicScore;
       }, 0);
 
+      // Calculate the total questions for the subject
       const totalQuestions = subject?.topics?.reduce((acc, topic) => {
-        return acc + topic.questions.length;
+        const questionAmount = topic.applicable ? topic.questions.length : 0;
+        return acc + questionAmount;
+      }, 0);
+
+      // Calculate the answered questions for the subject
+      const answeredQuestions = subject?.topics?.reduce((acc, topic) => {
+        const answered = topic.questions?.reduce((acc, question) => {
+          return acc + (question.score ? 1 : 0);
+        }, 0);
+        return acc + (topic.applicable ? answered : 1);
       }, 0);
 
       return {
@@ -24,12 +40,13 @@ export const useReviewStore = defineStore('review', () => {
         key: key as SubjectsKeys,
         score,
         totalQuestions,
+        answeredQuestions,
       };
     }),
   );
 
   const totalQuestions = computed(() => subjects.value.reduce((acc, subject) => acc + subject.totalQuestions, 0));
-  const answeredQuestions = computed(() => subjects.value.reduce((acc, subject) => acc + subject.score, 0));
+  const answeredQuestions = computed(() => subjects.value.reduce((acc, subject) => acc + subject.answeredQuestions, 0));
   const answeredPercentage = computed(() => (answeredQuestions.value / totalQuestions.value) * 100);
   const questionsLeft = computed(() => totalQuestions.value - answeredQuestions.value);
 

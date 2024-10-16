@@ -54,10 +54,18 @@ export const useScoreStore = defineStore('score', () => {
 
     let maxScore = 0;
     let score = subject.topics.reduce((acc, topic) => {
-      maxScore += topic.questions.length * 6;
+      // Calculate the max score for the topic
+      const maxTopicScore = topic.questions.reduce((acc, question) => {
+        const questionScore = 6 * question.weight;
+        return acc + questionScore;
+      }, 0);
+      maxScore += topic.applicable ? maxTopicScore : 0;
+
+      // Calculate the score for the topic
       const topicScore = topic.questions.reduce((acc, question) => acc + (question.score || 0), 0);
       return acc + topicScore;
     }, 0);
+
     const percentage = calcPercentage(maxScore, score);
     return { score, maxScore, percentage };
   };

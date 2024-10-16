@@ -3,7 +3,7 @@ const { review } = storeToRefs(useReviewStore());
 
 const route = useRoute();
 const id = route.params.subject;
-
+const confirm = useConfirm();
 const subject = computed(() => review.value[id]);
 
 const markAsNotApplicable = (title: string) => {
@@ -20,6 +20,28 @@ const markAsUnset = (title: string) => {
   subject.value.topics[topicIndex].applicable = true;
   subject.value.topics[topicIndex].questions.forEach((q) => {
     q.score = null;
+  });
+};
+
+const confirmNotApplicable = (title: string) => {
+  confirm.require({
+    message: 'Are you sure you want to proceed? All questions will be marked as "Not Applicable" and the feedback that is given will be lost.',
+    header: 'Confirmation',
+    rejectProps: {
+      label: 'Cancel',
+      severity: 'secondary',
+      outlined: true,
+    },
+    acceptProps: {
+      label: 'Not Applicable',
+      severity: 'contrast',
+    },
+    accept: () => {
+      markAsNotApplicable(title);
+    },
+    reject: () => {
+      console.log('reject');
+    },
   });
 };
 </script>
@@ -42,7 +64,7 @@ const markAsUnset = (title: string) => {
         <Textarea :id="topic.title + 'label'" :disabled="!topic.applicable" class="w-full" rows="5" cols="30" />
       </FloatLabel>
       <div class="flex justify-end px-1">
-        <a v-if="topic.applicable" class="text-red-600 font-medium text-sm cursor-pointer" @click="markAsNotApplicable(topic.title)"
+        <a v-if="topic.applicable" class="text-red-600 font-medium text-sm cursor-pointer" @click="confirmNotApplicable(topic.title)"
           >Mark entire category as <b>'Not Applicable'</b></a
         >
         <a v-if="!topic.applicable" class="font-medium text-sm cursor-pointer" @click="markAsUnset(topic.title)">Mark entire category as <b>'Unset'</b></a>
