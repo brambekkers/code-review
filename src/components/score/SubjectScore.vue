@@ -3,7 +3,7 @@ const { subjectScores } = storeToRefs(useScoreStore());
 </script>
 
 <template>
-  <Fieldset legend="Subject scores" class="!mx-auto !max-w-4xl" pt:legend="text-xl">
+  <Fieldset legend="Subject scores" class="!mx-auto !max-w-4xl w-full" pt:legend="text-xl">
     <ul>
       <li v-for="(item, key) in subjectScores" class="py-3 border-secondary">
         <div class="flex justify-between items-end">

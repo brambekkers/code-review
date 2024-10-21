@@ -9,6 +9,7 @@ const subject = computed(() => review.value[id]);
 const markAsNotApplicable = (title: string) => {
   const topicIndex = subject.value.topics.findIndex((t) => t.title === title);
   subject.value.topics[topicIndex].applicable = false;
+  subject.value.topics[topicIndex].comment = '';
   subject.value.topics[topicIndex].questions.forEach((q) => {
     q.score = 0;
     q.comment = '';
@@ -61,7 +62,7 @@ const confirmNotApplicable = (title: string) => {
       <div v-html="topic?.description" class="font-medium [&>*]:list-disc [&>*]:ms-4 px-2" />
       <FloatLabel class="mt-6" variant="on">
         <label :for="topic.title + 'label'">Your feedback for the whole topic...</label>
-        <Textarea :id="topic.title + 'label'" :disabled="!topic.applicable" class="w-full" rows="5" cols="30" />
+        <Textarea v-model="topic.comment" :id="topic.title + 'label'" :disabled="!topic.applicable" class="w-full" rows="5" cols="30" />
       </FloatLabel>
       <div class="flex justify-end px-1">
         <a v-if="topic.applicable" class="text-red-600 font-medium text-sm cursor-pointer" @click="confirmNotApplicable(topic.title)"

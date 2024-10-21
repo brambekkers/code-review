@@ -3,7 +3,7 @@ const { team } = storeToRefs(useTeamStore());
 </script>
 
 <template>
-  <Fieldset legend="Project details" class="!mx-auto !max-w-4xl !bg-slate-50" pt:content="!pb-0" pt:legend="text-xl !bg-transparent">
+  <Fieldset legend="Project details" class="!mx-auto !max-w-4xl !bg-slate-50 w-full" pt:content="!pb-0" pt:legend="text-xl !bg-transparent">
     <ul>
       <li v-for="(item, key) in team" class="flex py-3 [&:not(:last-child)]:border-b border-secondary">
         <!-- Keys -->

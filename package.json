@@ -16,6 +16,7 @@
     "@primevue/nuxt-module": "^4.1.0",
     "@primevue/themes": "^4.1.0",
     "firebase": "^10.14.1",
+    "html2pdf.js": "^0.9.3",
     "nuxt": "^3.13.1",
     "nuxt-vuefire": "^1.0.4",
     "pinia": "^2.2.4",

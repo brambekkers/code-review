@@ -16,6 +16,7 @@ export const review = {
     topics: [
       {
         title: 'ESLint',
+        comment: '',
         applicable: true,
         description:
           '<ul><li>Ensure that ESLint is configured and enabled.</li><li>Run eslint</li><li>Search whole repository for the following query to find disabled rules</li><li>Ensure that the ESLint configuration is up-to-date and follows best practices.</li></ul>',
@@ -66,6 +67,7 @@ export const review = {
       },
       {
         title: 'SonarQube',
+        comment: '',
         applicable: true,
         description:
           '<ul><li>Check the SonarQube dashboard</li><li>Check the sonar-project.properties file to see if certain files are excluded from the scan</li><li>Check if the SonarQube scan is executed in the pipeline</li><li>Provide examples of problematic issues</li></ul>',
@@ -123,6 +125,7 @@ export const review = {
       },
       {
         title: 'HP Fortify',
+        comment: '',
         applicable: true,
         description:
           '<ul><li>Check the Fortify dashboard</li><li>Check if the Fortify scan is enabled in the pipeline file</li><li>Provide examples of problematic issues</li></ul>',
@@ -166,6 +169,7 @@ export const review = {
       },
       {
         title: 'NexusIQ',
+        comment: '',
         applicable: true,
         description:
           '<ul><li>Check the NexusIQ dashboard</li><li>Check if the NexusIQ scan is enabled in the pipeline file</li><li>Provide examples of problematic issues</li></ul>',
@@ -209,6 +213,7 @@ export const review = {
     topics: [
       {
         title: 'Supported dependencies',
+        comment: '',
         applicable: true,
         description:
           '<ul><li>Invoke the vue-cli-plugin-ibrebuild and check the differences in dependencies</li><li>Check the nodeVersion that is set in the pipeline file (>18)</li><li>Check the lockfileVersion in the package-lock.json file (v3)</li><li>Check for unsupported dependencies like: emerald-global, axios, extract-loader, ...</li><li>Provide examples of problematic issues</li><li>Run `npx depcheck` to find possible dependency issues.</li></ul>',
@@ -280,6 +285,7 @@ export const review = {
       },
       {
         title: 'Lifecycle management',
+        comment: '',
         applicable: true,
         description: '<ul><li>Run npm outdated</li><li>Provide examples of problematic issues</li></ul>',
         questions: [
@@ -301,6 +307,7 @@ export const review = {
     topics: [
       {
         title: 'Folder structure',
+        comment: '',
         applicable: true,
         description:
           '<ul><li>Invoke the vue-cli-plugin-ibrebuild and check the differences in the source control section of your IDE</li><li>Provide examples of problematic issues</li></ul>',
@@ -344,6 +351,7 @@ export const review = {
       },
       {
         title: 'Protected files from @aab/cli',
+        comment: '',
         applicable: true,
         description:
           '<ul><li>Invoke the vue-cli-plugin-ibrebuild and check the differences in the source control section of your IDE</li><li>Provide examples of problematic issues</li></ul>',
@@ -366,6 +374,7 @@ export const review = {
     topics: [
       {
         title: 'Emerald components',
+        comment: '',
         applicable: true,
         description:
           "<ul><li>Check the package.json for @aab/sc-aab-* components</li><li>Search the project with the following query for each component to find unused components: import '@aab/sc-aab-COMPONENT-NAME'</li><li>Check for unsupported dependencies like: bootstrap, vuetify</li><li>Provide examples of problematic issues</li></ul>",
@@ -402,6 +411,7 @@ export const review = {
       },
       {
         title: 'Emerald styling',
+        comment: '',
         applicable: true,
         description:
           '<ul><li>Check the package.json for the @aab/sc-styles-emerald package</li><li>Check the package.json for the older @aab/sc-styles-* packages</li><li>Check the package.json for the deprecated emerald-global package</li><li>Lots of custom styling usually means deviation from the Emerald Design System</li><li>Provide examples of problematic issues</li></ul>',
@@ -466,6 +476,7 @@ export const review = {
     topics: [
       {
         title: 'Vue Essentials',
+        comment: '',
         applicable: true,
         description:
           "<p>This section follows the structure of the 'Essentials' section of the official Vuejs documentation: https://vuejs.org/guide/essentials/template-syntax.html</p><ul><li>Use the documentation to clarify doubts or best practices</li><li>Search the whole project for directives of a specific section (e.g.: v-if)</li><li>Search the whole project for method names of a specific section (e.g.: watch)</li><li>Provide examples of problematic issues</li></ul>",
@@ -887,6 +898,7 @@ export const review = {
       },
       {
         title: 'Vue Components essentials',
+        comment: '',
         applicable: true,
         description:
           "<p>This section follows the structure of the 'Components In-Depth' section of the official Vuejs documentation: https://vuejs.org/guide/components/registration.html</p><ul><li>Use the documentation to clarify doubts or best practices</li><li>Search the whole project for unique parts of a specific section (e.g.: <slot)</li><li>Search the whole project for method names of a specific section (e.g.: emit)</li><li>Provide examples of problematic issues</li></ul>",
@@ -1042,6 +1054,7 @@ export const review = {
       },
       {
         title: 'Routing',
+        comment: '',
         applicable: true,
         description:
           '<p>This section follows the official vue-router documentation: https://router.vuejs.org/guide/</p><ul><li>Use the documentation to clarify doubts or best practices</li><li>Search the whole project for unique parts of a specific section (e.g.: router.push( )</li><li>Invoke the vue-cli-plugin-ibrebuild and check the differences in the source control section of your IDE</li><li>Provide examples of problematic issues</li></ul>',
@@ -1141,6 +1154,7 @@ export const review = {
     topics: [
       {
         title: 'Readability',
+        comment: '',
         applicable: true,
         description: `<p>This section is based on Chapter 3 of the book: 
                         <i>Refactoring: Improving the Design of Existing Code</i> by Martin Fowler. 
@@ -1182,6 +1196,7 @@ export const review = {
       },
       {
         title: 'Security',
+        comment: '',
         applicable: true,
         description: `<p>This section is based on the OWASP top 10: 
                         <a href="https://owasp.org/www-project-top-ten/">https://owasp.org/www-project-top-ten/</a></p>
@@ -1213,6 +1228,7 @@ export const review = {
     topics: [
       {
         title: 'Unit testing',
+        comment: '',
         applicable: true,
         description: `<ul>
                           <li>No coverage tricks, search for:
@@ -1250,6 +1266,7 @@ export const review = {
       },
       {
         title: 'Functional testing',
+        comment: '',
         applicable: true,
         description: `<ul>
                           <li>No skipped tests, search for:
@@ -1270,6 +1287,7 @@ export const review = {
       },
       {
         title: 'E2E testing',
+        comment: '',
         applicable: true,
         description: `<ul>
                           <li>No skipped tests, search for:
@@ -1288,6 +1306,7 @@ export const review = {
       },
       {
         title: 'Performance testing',
+        comment: '',
         applicable: true,
         description: `<ul>
                           <li>Check if E2E tests are enabled in the pipeline on DTA</li>
@@ -1315,6 +1334,7 @@ export const review = {
     topics: [
       {
         title: 'Automated tests',
+        comment: '',
         applicable: true,
         description: `<ul>
                           <li>Check if the axe test is used</li>
@@ -1339,6 +1359,7 @@ export const review = {
     topics: [
       {
         title: 'Merge Quality',
+        comment: '',
         applicable: true,
         description: `<ul>
                         <li>Ensure that merges are clean and do not contain unnecessary commits.</li>
@@ -1353,6 +1374,7 @@ export const review = {
       },
       {
         title: 'Commit Message Quality',
+        comment: '',
         applicable: true,
         description: `<ul>
                         <li>Ensure that commit messages are clear, concise, and meaningful.</li>
@@ -1366,6 +1388,7 @@ export const review = {
       },
       {
         title: 'Commit Linting',
+        comment: '',
         applicable: true,
         description: `<ul>
                         <li>Ensure that commit messages are linted to follow a consistent style.</li>
@@ -1379,6 +1402,7 @@ export const review = {
       },
       {
         title: 'Semantic Versioning Quality',
+        comment: '',
         applicable: true,
         description: `<ul>
                         <li>Ensure that semantic versioning is followed properly.</li>
@@ -1400,6 +1424,7 @@ export const review = {
       },
       {
         title: 'Change-log Quality',
+        comment: '',
         applicable: true,
         description: `<ul>
                         <li>Ensure that the change-log is updated and well-maintained.</li>
@@ -1414,6 +1439,7 @@ export const review = {
       },
       {
         title: 'PR Discipline',
+        comment: '',
         applicable: true,
         description: `<ul>
                         <li>Ensure that pull requests (PRs) follow best practices.</li>
@@ -1428,6 +1454,7 @@ export const review = {
       },
       {
         title: 'Branching Quality',
+        comment: '',
         applicable: true,
         description: `<ul>
                         <li>Ensure that the branching strategy is effective and branches are kept updated with main branches.</li>

@@ -4,7 +4,7 @@ const { answeredPercentage } = storeToRefs(useReviewStore());
 <template>
   <Message v-if="answeredPercentage < 99" class="max-w-4xl mx-auto mt-16 p-4 bg-slate-50" severity="none">
     <div class="flex gap-6 items-center">
-      <Icon v-tooltip="'Azure'" class="!h-32 !w-32" name="teenyicons:exclamation-circle-outline" size="48" />
+      <Icon class="!h-32 !w-32" name="teenyicons:exclamation-circle-outline" size="48" />
       <div>
         <h3 class="text-xl">Review Incomplete</h3>
         <p>
@@ -17,5 +17,3 @@ const { answeredPercentage } = storeToRefs(useReviewStore());
     </div>
   </Message>
 </template>
-
-<style scoped></style>
