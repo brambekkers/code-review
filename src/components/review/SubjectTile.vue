@@ -19,7 +19,7 @@ const props = defineProps<{
 
       <div class="relative z-10 mx-auto text-center text-white">
         <h2 class="text-2xl font-extralight">{{ subject.title }}</h2>
-        <h3 class="text-md font-semibold">{{ subject.score }} / {{ subject.totalQuestions }}</h3>
+        <h3 class="text-md font-semibold">{{ subject.answeredQuestions }} / {{ subject.totalQuestions }}</h3>
       </div>
     </div>
   </div>

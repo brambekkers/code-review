@@ -12,27 +12,27 @@ export const useReviewStore = defineStore('review', () => {
     Object.entries(review.value).map(([key, subject]) => {
       // Calculate the score for the subject
       const score = subject?.topics?.reduce((acc, topic) => {
-        const answered = topic.questions?.reduce((acc, question) => {
+        const questionScores = topic.questions?.reduce((acc, question) => {
           const maxScore = (question.score ?? 0) * question.weight;
-          return acc + (question.score ? 1 : 0);
+          return acc + (question.score ? maxScore : 0);
         }, 0);
 
-        const topicScore = topic.applicable ? answered : 0;
+        const topicScore = topic.applicable ? questionScores : 0;
         return acc + topicScore;
       }, 0);
 
       // Calculate the total questions for the subject
       const totalQuestions = subject?.topics?.reduce((acc, topic) => {
-        const questionAmount = topic.applicable ? topic.questions.length : 0;
+        const questionAmount = topic.questions.length;
         return acc + questionAmount;
       }, 0);
 
       // Calculate the answered questions for the subject
       const answeredQuestions = subject?.topics?.reduce((acc, topic) => {
         const answered = topic.questions?.reduce((acc, question) => {
-          return acc + (question.score ? 1 : 0);
+          return acc + (!topic.applicable || question.score ? 1 : 0);
         }, 0);
-        return acc + (topic.applicable ? answered : 1);
+        return acc + answered;
       }, 0);
 
       return {
