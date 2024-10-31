@@ -8,7 +8,5 @@ const options = ref([
 </script>
 
 <template>
-  <div>
-    <SelectButton v-model="modelValue" :options="options" optionLabel="label" option-value="value" :allow-empty="false" />
-  </div>
+  <SelectButton v-model="modelValue" :options="options" optionLabel="label" option-value="value" :allow-empty="false" />
 </template>

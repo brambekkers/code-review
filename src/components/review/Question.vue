@@ -29,7 +29,9 @@ const nextQuestion = () => {
       <h3 class="font-bold text-lg">Question:</h3>
       <p>{{ selectedQuestion?.question }}</p>
       <Textarea v-model="selectedQuestion.comment" class="w-full mt-4" rows="5" cols="30" />
-      <BaseRateSelect v-model="selectedQuestion.score" class="w-full mt-3" />
+      <BaseRateSelect v-if="selectedQuestion.questionType === 'rating'" v-model="selectedQuestion.score" class="!w-full mt-3" />
+      <BaseTrueFalse v-if="selectedQuestion.questionType === 'trueFalse'" v-model="selectedQuestion.score" class="mt-3 border border-slate-300" />
+
       <Divider class="mb-5 mt-8" />
       <div class="flex justify-end">
         <Button label="Submit" severity="contrast" class="!px-12 !py-2 !text-xl" @click="nextQuestion" />
