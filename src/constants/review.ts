@@ -274,10 +274,11 @@ export const review = {
         ],
       },
       {
-        title: 'Lifecycle management',
+        title: 'Lifecycle Management',
         comment: '',
         applicable: true,
-        description: '<ul><li>Run npm outdated</li><li>Provide examples of problematic issues</li></ul>',
+        description:
+          "<p>Effective lifecycle management of dependencies is crucial for maintaining a secure, stable, and up-to-date software project. As dependencies evolve, new versions may introduce enhancements, bug fixes, or security patches that can significantly impact the application's performance and safety. Regularly reviewing and updating dependencies helps ensure compatibility with the latest standards and reduces the risk of vulnerabilities. By running tools like <code>npm outdated</code>, developers can easily identify outdated packages and plan updates accordingly. Proactively managing the lifecycle of dependencies ensures that the project remains resilient, efficient, and aligned with current best practices.</p><ul><li>Run npm outdated</li><li>Provide examples of problematic issues</li></ul>",
         questions: [
           {
             question: 'Are there outdated dependencies present?',
