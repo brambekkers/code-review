@@ -59,7 +59,10 @@ const confirmNotApplicable = (title: string) => {
     <h3 class="font-bold text-4xl text-gray-800 my-6">Topics</h3>
 
     <Fieldset v-for="topic of subject.topics" :key="topic.title" :legend="topic.title" pt:legend="font-bold text-xl" class="!mb-6">
-      <div v-html="topic?.description" class="description text-sm [&>*]:list-disc" />
+      <div
+        v-html="topic?.description"
+        class="border-2 border-dashed border-surface-200 h-full rounded bg-slate-50 font-medium p-5 description [&>*]:list-disc"
+      />
       <FloatLabel class="mt-6" variant="on">
         <label :for="topic.title + 'label'">Your feedback for the whole topic...</label>
         <Textarea v-model="topic.comment" :id="topic.title + 'label'" :disabled="!topic.applicable" class="w-full" rows="5" cols="30" />

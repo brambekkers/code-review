@@ -170,7 +170,7 @@ const subjects = [
       <template v-slot:desc>Why this is a good way of reviewing</template>
     </LayoutSectionHead>
 
-    <div class="flex flex-col gap-10 mx-auto max-w-4xl mt-16">
+    <div class="flex flex-col gap-8 mx-auto max-w-4xl mt-16">
       <h2 class="font-medium text-2xl text-gray-800">Why we check what we check</h2>
 
       <section>
@@ -183,8 +183,17 @@ const subjects = [
       </section>
 
       <section class="flex flex-col">
-        <h2 class="font-medium text-2xl text-gray-800">Subjects and Justifications</h2>
-
+        <h2 class="font-medium text-xl text-gray-800">Subjects and Justifications</h2>
+        <p>
+          Our code review process comprehensively addresses the critical aspects of software development, focusing on quality, security, and maintainability. By
+          implementing quality gates and leveraging advanced tools, we ensure adherence to coding standards and best practices. Effective dependency management
+          and consistent project setup contribute to a streamlined and secure codebase. Prioritizing security protocols protects against vulnerabilities, while
+          a thorough testing strategy ensures that the application is reliable, performant, and accessible. This holistic approach provides a strong foundation
+          for exploring the specific subjects and justifications detailed below, equipping developers with the insights needed to create robust, high-quality
+          software.
+        </p>
+      </section>
+      <section>
         <Fieldset
           v-for="(subject, index) in subjects"
           :key="index"

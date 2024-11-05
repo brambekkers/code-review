@@ -22,7 +22,7 @@ const nextQuestion = () => {
     <section class="flex flex-col">
       <div
         v-html="selectedTopic?.description"
-        class="border-2 border-dashed border-surface-200 h-full rounded bg-slate-50 font-medium p-5 [&>*]:list-disc [&>*]:ms-4"
+        class="border-2 border-dashed border-surface-200 h-full rounded bg-slate-50 font-medium description p-5 [&>*]:list-disc"
       />
     </section>
     <section v-if="selectedQuestion" class="mt-4">
@@ -39,3 +39,16 @@ const nextQuestion = () => {
     </section>
   </Dialog>
 </template>
+
+<style scoped>
+:deep(.description) {
+  ul {
+    margin: 1rem 0;
+    padding: 0 3rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+</style>
