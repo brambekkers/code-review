@@ -8,7 +8,7 @@ const subjects = [
       {
         title: 'ESLint',
         content:
-          "Ensuring ESLint is enabled and properly configured helps enforce consistent coding standards and practices across the codebase. By checking for deviations and in-line rule disablements, we ensure that exceptions are justified and don't introduce inconsistencies. Identifying errors and warnings early helps maintain code quality and prevents potential issues from escalating.",
+          "Ensuring ESLint is enabled and properly configured helps enforce consistent coding standards and practices across the codebase. By checking for deviations and in-line disabled rules, we ensure that exceptions are justified and don't introduce inconsistencies. Identifying errors and warnings early helps maintain code quality and prevents potential issues from escalating.",
       },
       {
         title: 'SonarQube',

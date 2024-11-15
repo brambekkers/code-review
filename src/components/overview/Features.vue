@@ -3,13 +3,13 @@
     {
       title: 'Enhance Code Quality',
       description:
-        "Code reviews ensure that every piece of code meets a high standard of quality. By catching bugs, enforcing coding standards, and promoting best practices, code reviews help maintain a codebase that's clean, efficient, and easy to maintain.",
+        "Code reviews ensure that every piece of code meets a high quality standard. By catching bugs, enforcing coding standards, and promoting best practices, code reviews help maintain a codebase that's clean, efficient, and easy to maintain.",
       icon: 'bx:bxs-data'
     },
     {
       title: 'Boost Team Collaboration',
       description:
-        "Code reviews foster a culture of collaboration and knowledge sharing. Developers can learn from each other's expertise, leading to a more cohesive and knowledgeable team. This collaborative process helps distribute knowledge about the codebase, reducing dependency on individual developers.",
+        "Code reviews foster a culture of collaboration and knowledge sharing. Developers can learn from each other's expertise, leading to more cohesive and knowledgeable teams. This collaborative process helps distribute knowledge about the codebase, reducing dependency on individual developers.",
       icon: 'bx:bxs-group'
     },
     {

@@ -15,7 +15,7 @@
     <div>
       <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight">Reviewing made easy</h1>
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
-        Supercharge Your Code Reviews with Advanced Tools and Collaborative Insights for Maximum Impact. Elevate Your Reviewing Skills, Enhance Code Quality,
+        Supercharge your Code Reviews with Advanced Tools and Collaborative Insights for Maximum Impact. Elevate your Reviewing Skills, Enhance Code Quality,
         and Gain Recognition as a Top Reviewer.
       </p>
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
