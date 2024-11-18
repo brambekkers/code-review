@@ -9,7 +9,7 @@ export const review = {
         comment: '',
         applicable: true,
         description:
-          '<p>ESLint is a powerful tool for identifying and fixing problems in JavaScript code. It is essential for maintaining code quality and ensuring consistency across a project. By enforcing a set of rules, ESLint helps developers adhere to best practices and avoid common pitfalls. It is highly customizable, allowing teams to tailor it to their specific coding standards. Proper configuration and usage of ESLint can significantly improve the readability and maintainability of the codebase, making it easier for new developers to onboard and for teams to collaborate effectively.</p><ul><li>Ensure that ESLint is configured and enabled.</li><li>Run eslint</li><li>Search the whole repository for the following query to find disabled rules</li><li>Ensure that the ESLint configuration is up-to-date and follows best practices.</li></ul>',
+          '<p>ESLint is a powerful tool for identifying and fixing problems in JavaScript code. It is essential for maintaining code quality and ensuring consistency across a project. By enforcing a set of rules, ESLint helps developers adhere to best practices and avoid common pitfalls. It is highly customizable, allowing teams to tailor it to their specific coding standards. Proper configuration and usage of ESLint can significantly improve the readability and maintainability of the codebase, making it easier for new developers to onboard and for teams to collaborate effectively.</p><ul><li>Ensure that ESLint is configured and enabled.</li><li>Run eslint</li><li>Search the whole repository for the following query to find disabled rules: "eslint-disable" </li><li>Ensure that the ESLint configuration is up-to-date and follows best practices.</li></ul>',
         questions: [
           {
             question: 'Is ESlint enabled?',
@@ -33,7 +33,7 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Are there in-line rule disablements?',
+            question: 'Are there any rules disabled in-line?',
             score: null,
             weight: 1,
             questionType: 'trueFalse',
@@ -43,7 +43,7 @@ export const review = {
             question: 'Are there ESlint errors?',
             score: null,
             weight: 1,
-            questionType: 'rating',
+            questionType: 'trueFalse',
             comment: '',
           },
           {
@@ -77,35 +77,35 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Are there Blocker issues?',
+            question: 'Are there any Blocker issues?',
             score: null,
             weight: 1,
             questionType: 'rating',
             comment: '',
           },
           {
-            question: 'Are there Critical issues?',
+            question: 'Are there any Critical issues?',
             score: null,
             weight: 1,
             questionType: 'rating',
             comment: '',
           },
           {
-            question: 'Are there Major issues?',
+            question: 'Are there any Major issues?',
             score: null,
             weight: 1,
             questionType: 'rating',
             comment: '',
           },
           {
-            question: 'Are there Minor issues?',
+            question: 'Are there any Minor issues?',
             score: null,
             weight: 1,
             questionType: 'rating',
             comment: '',
           },
           {
-            question: "Are there incorrectly marked 'false-positives' or 'wont-fix'?",
+            question: "Are there any incorrectly marked 'false-positives' or 'wont-fix'?",
             score: null,
             weight: 1,
             questionType: 'trueFalse',
@@ -118,7 +118,7 @@ export const review = {
         comment: '',
         applicable: true,
         description:
-          '<p>HP Fortify is a comprehensive application security solution designed to identify, prioritize, and remediate vulnerabilities in source code. It is widely used by organizations to safeguard their software against potential threats by performing deep security analysis and providing detailed insights into security weaknesses. By integrating Fortify into the development lifecycle, teams can proactively address security issues, ensuring that applications are robust and secure before deployment. This not only helps in minimizing risk but also enhances the overall security posture of the organization.</p><ul><li>Check the Fortify dashboard</li><li>Check if the Fortify scan is enabled in the pipeline file</li><li>Provide examples of problematic issues</li></ul>',
+          '<p>HP Fortify is a comprehensive application security tool designed to identify, prioritize, and remediate vulnerabilities in source code. It is widely used by organizations to safeguard their software against potential threats by performing deep security analysis and providing detailed insights into security weaknesses. By integrating Fortify into the development lifecycle, teams can proactively address security issues, ensuring that applications are robust and secure before deployment. This not only helps in minimizing risks but also enhances the overall security posture of the organization.</p><ul><li>Check the Fortify dashboard</li><li>Check if the Fortify scan is enabled in the pipeline file</li><li>Provide examples of problematic issues</li></ul>',
         questions: [
           {
             question: 'Is HP Fortify enabled?',
@@ -128,28 +128,28 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Are there Critical issues?',
+            question: 'Are there any Critical issues?',
             score: null,
             weight: 1,
             questionType: 'rating',
             comment: '',
           },
           {
-            question: 'Are there High severity issues?',
+            question: 'Are there High any severity issues?',
             score: null,
             weight: 1,
             questionType: 'rating',
             comment: '',
           },
           {
-            question: 'Are there Medium severity issues?',
+            question: 'Are there Medium any severity issues?',
             score: null,
             weight: 1,
             questionType: 'rating',
             comment: '',
           },
           {
-            question: 'Are there Low severity issues?',
+            question: 'Are there Low any severity issues?',
             score: null,
             weight: 1,
             questionType: 'rating',
@@ -237,7 +237,7 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Are there unused dependencies used?',
+            question: 'Are out of date dependencies used?',
             score: null,
             weight: 1,
             questionType: 'trueFalse',
@@ -251,14 +251,14 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Are there unsupported dependencies used?',
+            question: 'Are unsupported dependencies used?',
             score: null,
             weight: 1,
             questionType: 'trueFalse',
             comment: '',
           },
           {
-            question: 'Are there deprecated dependencies used?',
+            question: 'Are deprecated dependencies used?',
             score: null,
             weight: 1,
             questionType: 'trueFalse',
@@ -325,14 +325,14 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Are there missing folders?',
+            question: 'Are there any missing folders?',
             score: null,
             weight: 1,
             questionType: 'trueFalse',
             comment: '',
           },
           {
-            question: 'Are concerns separated logically?',
+            question: 'Is there a logical separation of concern (e.g. state, functions, components)?',
             score: null,
             weight: 1,
             questionType: 'rating',
@@ -345,7 +345,7 @@ export const review = {
         comment: '',
         applicable: true,
         description:
-          '<p>In big development project, certain files need to be protected to ensure the integrity and security of the application. Within ABN Amro the concept of protected files involves restricting direct modifications to critical files that could impact the functionality, security, or stability of the project. Utilizing tools like @aab/cli, developers can enforce rules and guidelines on how these files are managed within the source control system. This approach helps prevent accidental changes and ensures that only authorized modifications are made, maintaining a high standard of code quality and consistency across the team.</p><ul><li>Invoke the vue-cli-plugin-ibrebuild/Warp-drive and check the differences in the source control section of your IDE</li><li>Provide examples of problematic issues</li></ul>',
+          '<p>In big development projects, certain files need to be protected to ensure the integrity and security of the application. Within ABN Amro the concept of protected files involves restricting direct modifications to critical files that could impact the functionality, security, or stability of the project. Utilizing tools like @aab/cli, developers can enforce rules and guidelines on how these files are managed within the source control system. This approach helps prevent accidental changes and ensures that only authorized modifications are made, maintaining a high standard of code quality and consistency across the team.</p><ul><li>Invoke the vue-cli-plugin-ibrebuild/Warp-drive and check the differences in the source control section of your IDE</li><li>Provide examples of problematic issues</li></ul>',
         questions: [
           {
             question: 'Are protected files modified?',
@@ -378,21 +378,21 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Are there unused Emerald components and imports present?',
+            question: 'Are there any unused Emerald components and imports present?',
             score: null,
             weight: 1,
             questionType: 'trueFalse',
             comment: '',
           },
           {
-            question: 'Are there local UI components present?',
+            question: 'Are there any local UI components present?',
             score: null,
             weight: 1,
             questionType: 'trueFalse',
             comment: '',
           },
           {
-            question: 'Are there third-party UI components present?',
+            question: 'Are there any third-party UI components present?',
             score: null,
             weight: 1,
             questionType: 'trueFalse',
@@ -418,14 +418,14 @@ export const review = {
             question: 'Does the project deviate from the Emerald Design System style guide?',
             score: null,
             weight: 1,
-            questionType: 'trueFalse',
+            questionType: 'rating',
             comment: '',
           },
           {
             question: 'Is custom styling kept to a minimum?',
             score: null,
             weight: 1,
-            questionType: 'trueFalse',
+            questionType: 'rating',
             comment: '',
           },
           {
@@ -436,7 +436,7 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Are stylesheets logically located?',
+            question: 'Are the stylesheets logically located?',
             score: null,
             weight: 1,
             questionType: 'rating',
@@ -450,7 +450,7 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Is the old CSS-in-JS stack present?',
+            question: 'Is the old CSS-in-JS stack used?',
             score: null,
             weight: 1,
             questionType: 'trueFalse',
@@ -470,7 +470,7 @@ export const review = {
         comment: '',
         applicable: true,
         description:
-          "<p>Mastering the essentials of Vue.js is fundamental for any developer working with this versatile and progressive JavaScript framework. The 'Essentials' section of the official Vue.js documentation provides a comprehensive overview of key concepts, ranging from template syntax to reactive properties and lifecycle hooks. By understanding and applying these core principles, developers can build robust and efficient applications. Regularly consulting the documentation not only clarifies doubts but also ensures adherence to best practices, enabling developers to harness the full power of Vue.js. This approach facilitates the creation of maintainable and scalable applications that leverage Vue's reactive nature and component-based architecture.</p><p>This section follows the structure of the 'Essentials' section of the official Vue.js documentation: https://vuejs.org/guide/essentials/template-syntax.html</p><ul><li>Use the documentation to clarify doubts or best practices</li><li>Search the whole project for directives of a specific section (e.g., v-if)</li><li>Search the whole project for method names of a specific section (e.g., watch)</li><li>Provide examples of problematic issues</li></ul>",
+          "<p>Mastering the essentials of Vue.js is fundamental for any developer working with this JavaScript framework. The 'Essentials' section of the official Vue.js documentation provides a comprehensive overview of key concepts, ranging from template syntax to reactive properties and lifecycle hooks. By understanding and applying these core principles, developers can build robust and efficient applications. Regularly consulting the documentation not only clarifies doubts but also ensures adherence to best practices, enabling developers to harness the full power of Vue.js. This approach facilitates the creation of maintainable and scalable applications that leverage Vue's reactive nature and component-based architecture.</p><p>This section follows the structure of the 'Essentials' section of the official Vue.js documentation: https://vuejs.org/guide/essentials/template-syntax.html</p><ul><li>Use the documentation to clarify doubts or best practices</li><li>Review the project for directives of a specific section (e.g., v-if)</li><li>Review the project for method names of a specific section (e.g., watch)</li><li>Provide examples of problematic issues</li></ul>",
         questions: [
           {
             question: 'Is text interpolation used correctly?',
@@ -487,7 +487,7 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Are Boolean attributes bound correctly?',
+            question: 'Are boolean attributes bound correctly?',
             score: null,
             weight: 1,
             questionType: 'rating',
@@ -537,13 +537,6 @@ export const review = {
           },
           {
             question: 'Is reactive() used correctly?',
-            score: null,
-            weight: 1,
-            questionType: 'rating',
-            comment: '',
-          },
-          {
-            question: 'Is ref() used correctly?',
             score: null,
             weight: 1,
             questionType: 'rating',
@@ -641,14 +634,7 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Are v-for and v-if on the same element avoided?',
-            score: null,
-            weight: 1,
-            questionType: 'trueFalse',
-            comment: '',
-          },
-          {
-            question: 'Is the key attribute used correctly?',
+            question: 'Is the "key" attribute used correctly?',
             score: null,
             weight: 1,
             questionType: 'trueFalse',
@@ -690,7 +676,7 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Are key modifiers used correctly?',
+            question: 'Are "key" modifiers used correctly?',
             score: null,
             weight: 1,
             questionType: 'trueFalse',
@@ -746,7 +732,7 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Is the amount of code in lifecycle hooks acceptable?',
+            question: 'Is the amount of code in lifecycle hooks not excessive?',
             score: null,
             weight: 1,
             questionType: 'rating',
@@ -892,7 +878,7 @@ export const review = {
         comment: '',
         applicable: true,
         description:
-          "<p>Understanding the essentials of Vue components is crucial for building dynamic and reusable elements in Vue.js applications. Components are the building blocks of Vue applications, enabling developers to encapsulate functionality and create modular, maintainable code. The 'Components In-Depth' section of the official Vue.js documentation offers valuable insights into component registration, props, slots, and more, guiding developers through best practices and advanced techniques. By mastering these concepts, developers can effectively leverage Vue's component-based architecture to enhance flexibility and scalability in their projects.</p><p>This section follows the structure of the 'Components In-Depth' section of the official Vue.js documentation: https://vuejs.org/guide/components/registration.html</p><ul><li>Use the documentation to clarify doubts or best practices</li><li>Search the whole project for unique parts of a specific section (e.g., &lt;slot&gt;)</li><li>Search the whole project for method names of a specific section (e.g., emit)</li><li>Provide examples of problematic issues</li></ul>",
+          "<p>Understanding the essentials of Vue components is crucial for building dynamic and reusable elements in Vue.js applications. Components are the building blocks of Vue applications, enabling developers to encapsulate functionality and create modular, maintainable code. The 'Components In-Depth' section of the official Vue.js documentation offers valuable insights into component registration, props, slots, and more, guiding developers through best practices and advanced techniques. By mastering these concepts, developers can effectively leverage Vue's component-based architecture to enhance flexibility and scalability in their projects.</p><p>This section follows the structure of the 'Components In-Depth' section of the official Vue.js documentation: https://vuejs.org/guide/components/registration.html</p><ul><li>Use the documentation to clarify doubts or best practices</li><li>Review the project for unique parts of a specific section (e.g., &lt;slot&gt;)</li><li>Review the project for method names of a specific section (e.g., emit)</li><li>Provide examples of problematic issues</li></ul>",
         questions: [
           {
             question: 'Are components defined correctly?',
@@ -986,7 +972,7 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Are events listened to correctly?',
+            question: 'Is event listening correctly implemented?',
             score: null,
             weight: 1,
             questionType: 'trueFalse',
@@ -1058,7 +1044,7 @@ export const review = {
             comment: '',
           },
           {
-            question: 'Are named routes used which is the preferred way?',
+            question: 'Are named routes used?(preferred way)',
             score: null,
             weight: 1,
             questionType: 'trueFalse',
@@ -1115,13 +1101,6 @@ export const review = {
           },
           {
             question: 'Is the meta field used correctly?',
-            score: null,
-            weight: 1,
-            questionType: 'rating',
-            comment: '',
-          },
-          {
-            question: 'Are props passed correctly?',
             score: null,
             weight: 1,
             questionType: 'rating',
@@ -1219,7 +1198,7 @@ export const review = {
         comment: '',
         applicable: true,
         description:
-          '<p>Unit testing is a critical practice in software development that focuses on verifying the smallest testable parts of an application, typically individual functions or components, to ensure they work as intended. By systematically testing each unit in isolation, developers can identify and fix bugs early in the development process, leading to more reliable and maintainable code. A robust unit testing strategy not only enhances code quality but also provides a safety net for future changes, enabling developers to refactor and evolve the codebase with confidence. Utilizing tools like Jest and Stryker for unit testing and mutation testing, respectively, can further improve the depth and effectiveness of testing efforts, ensuring comprehensive coverage and code quality.</p><ul><li>No coverage tricks, search for: <mark>/* c8 ignore</mark>, <mark>/* istanbul ignore</mark></li><li>No skipped unit-tests, search for: <mark>.skip</mark>, <mark>.only</mark></li><li>100% coverage on all files is suspicious</li><li>Check if files are excluded from coverage from jest config file</li><li>Stryker can be used to get a more in-depth view on the quality of tests, though it should be used sensibly: <a href="https://stryker-mutator.io/docs/stryker-js/guides/vuejs/">https://stryker-mutator.io/docs/stryker-js/guides/vuejs/</a></li><li>Provide examples of problematic issues</li></ul>',
+          '<p>Unit testing is a critical practice in software development that focuses on verifying the smallest testable parts of an application, typically individual functions or components, to ensure they work as intended. By systematically testing each unit in isolation, developers can identify and fix bugs early in the development process, leading to more reliable and maintainable code. A robust unit testing strategy not only enhances code quality but also provides a safety net for future changes, enabling developers to refactor and evolve the codebase with confidence. Utilizing tools like Jest and Vite for unit testing and mutation testing, respectively, can further improve the depth and effectiveness of testing efforts, ensuring comprehensive coverage and code quality.</p><ul><li>No coverage tricks, search for: <mark>/* c8 ignore</mark>, <mark>/* istanbul ignore</mark></li><li>No skipped unit-tests, search for: <mark>.skip</mark>, <mark>.only</mark></li><li>Check if files are excluded from coverage from jest config file</li><li>Stryker can be used to get a more in-depth view on the quality of tests, though it should be used sensibly: <a href="https://stryker-mutator.io/docs/stryker-js/guides/vuejs/">https://stryker-mutator.io/docs/stryker-js/guides/vuejs/</a></li><li>Provide examples of problematic issues</li></ul>',
         questions: [
           { question: 'Are unit tests present?', score: null, weight: 1, questionType: 'trueFalse', comment: '' },
           { question: 'Is code split up in pure functions to easily test?', score: null, weight: 1, questionType: 'rating', comment: '' },

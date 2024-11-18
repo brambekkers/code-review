@@ -22,8 +22,8 @@ const reviewersString = computed(() => {
     <h3 class="text-lg text-gray-800 text-center my-6 font-bold border rounded w-max px-5 py-3 mx-auto bg-slate-50">{{ totalScore.score }}</h3>
 
     <p>
-      In this review, we will take a further look at certain key aspects of the application. These include its qualityGates, dependencies, setup, styling,
-      technology, bestPractices, testing, accessibility and versioning. In the chart below, you can see how the team scored in each of these categories.
+      In this review, we will take a further look at certain key aspects of the application. These include its quality gates, dependencies, setup, styling,
+      technology, best practices, testing, accessibility and versioning. In the chart below, you can see how the team scored in each of these categories.
     </p>
   </Fieldset>
 </template>
