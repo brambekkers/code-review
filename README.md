@@ -1,6 +1,6 @@
 # Code Review App
 
-This is a simple code review application designed to assist code reviewers in evaluating codebases. Built using Vite and Vue3, the app guides you through various topics, allowing you to answer questions and provide ratings for each topic. At the end of the review, the project receives a score for each topic, and the results can be shared with the team.
+This is a simple code review application designed to assist code reviewers in evaluating codebases. Built using Nuxt3 (Vue), the app guides you through various topics, allowing you to answer questions and provide ratings for each topic. At the end of the review, the project receives a score for each topic, and the results can be shared with the team.
 
 This tool is intended for reviewers and not for the teams managing the project. As a reviewer, you provide all the information from the team, allowing for effective comparison of teams afterward.
 
