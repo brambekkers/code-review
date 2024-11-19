@@ -10,6 +10,10 @@ const addReviewer = () => {
   team.value.reviewers.push(nameField.value);
   nameField.value = '';
 };
+
+const removeReviewer = (remover: string) => {
+  team.value.reviewers = team.value.reviewers.filter((reviewer) => reviewer !== remover);
+};
 </script>
 
 <template>
@@ -44,11 +48,18 @@ const addReviewer = () => {
 
         <div class="flex w-full gap-2">
           <InputText type="text" v-model="nameField" class="flex-grow" placeholder="Reviewer name" />
-          <Button label="Add reviewer" severity="contrast" @click="addReviewer()" />
+          <Button label="Add reviewer" severity="contrast" @click="addReviewer()" :disabled="!nameField" />
         </div>
         <div v-if="!reviewers.length" class="text-sm mt-2 text-gray-500">Fill in name to add reviewer(s) for this project</div>
-        <div v-else class="flex gap-2 mt-2">
-          <OverlayBadge v-for="reviewer of reviewers" severity="danger">
+        <div v-else class="flex gap-3 mt-2 pt-2">
+          <OverlayBadge
+            v-for="reviewer of reviewers"
+            severity="danger"
+            value="x"
+            size="small"
+            pt:pcbadge:root="cursor-pointer !min-w-4 !h-4"
+            @click="removeReviewer(reviewer)"
+          >
             <Chip :label="reviewer" class="!text-sm !py-1" />
           </OverlayBadge>
         </div>

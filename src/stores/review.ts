@@ -71,7 +71,7 @@ export const useReviewStore = defineStore('review', () => {
       for (let topic of subject.topics) {
         let questionIndex = 0;
         for (let question of topic.questions) {
-          if (!question.score) {
+          if (typeof question.score !== 'number') {
             currentSubject.value = subject.key;
             currentTopic.value = topicIndex;
             currentQuestion.value = questionIndex;
@@ -93,6 +93,7 @@ export const useReviewStore = defineStore('review', () => {
   return {
     review,
     subjects,
+    currentSubject,
     selectedSubject,
     selectedTopic,
     selectedQuestion,

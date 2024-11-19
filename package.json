@@ -14,14 +14,14 @@
     "@nuxt/icon": "^1.6.1",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "@pinia/nuxt": "^0.5.5",
-    "@primevue/nuxt-module": "^4.2.1",
-    "@primevue/themes": "^4.2.1",
+    "@primevue/nuxt-module": "^4.2.2",
+    "@primevue/themes": "^4.2.2",
     "firebase": "^10.14.1",
     "html2pdf.js": "^0.9.3",
     "nuxt": "^3.14.0",
     "nuxt-vuefire": "^1.0.4",
     "pinia": "^2.2.6",
-    "primevue": "^4.2.1",
+    "primevue": "^4.2.2",
     "vue": "^3.5.12"
   },
   "devDependencies": {
