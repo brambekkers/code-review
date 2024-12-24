@@ -164,51 +164,50 @@ const subjects = [
 </script>
 
 <template>
-  <div>
-    <LayoutSectionHead>
-      <template v-slot:title>Justification</template>
-      <template v-slot:desc>Why this is a good way of reviewing</template>
-    </LayoutSectionHead>
-
-    <div class="flex flex-col gap-8 mx-auto max-w-4xl mt-16">
-      <h2 class="font-medium text-2xl text-gray-800">Why we check what we check</h2>
-
-      <section>
-        <h2 class="font-medium text-xl text-gray-800">Introduction</h2>
-        <p>
-          In modern software development, ensuring the quality, maintainability, and security of code is paramount. Our code review app is designed to
-          facilitate thorough reviews across multiple subjects, ensuring that code adheres to best practices, standards, and guidelines. This document provides
-          a detailed justification for why we test on the specified subjects, topics, and questions.
-        </p>
-      </section>
-
-      <section class="flex flex-col">
-        <h2 class="font-medium text-xl text-gray-800">Subjects and Justifications</h2>
-        <p>
-          Our code review process comprehensively addresses the critical aspects of software development, focusing on quality, security, and maintainability. By
-          implementing quality gates and leveraging advanced tools, we ensure adherence to coding standards and best practices. Effective dependency management
-          and consistent project setup contribute to a streamlined and secure codebase. Prioritizing security protocols protects against vulnerabilities, while
-          a thorough testing strategy ensures that the application is reliable, performant, and accessible. This holistic approach provides a strong foundation
-          for exploring the specific subjects and justifications detailed below, equipping developers with the insights needed to create robust, high-quality
-          software.
-        </p>
-      </section>
-      <section>
-        <Fieldset
-          v-for="(subject, index) in subjects"
-          :key="index"
-          pt:legend="font-medium text-2xl !bg-transparent"
-          class="!bg-slate-50 !mb-6"
-          :legend="subject.legend"
-        >
-          <p class="mb-4">{{ subject.description }}</p>
-
-          <div v-for="(item, idx) in subject.items" :key="idx">
-            <h3 class="font-medium text-lg text-gray-800">{{ item.title }}</h3>
-            <p class="mb-4">{{ item.content }}</p>
-          </div>
-        </Fieldset>
-      </section>
-    </div>
+  <div class="mt-16">
+    <h2 class="text-3xl lg:text-4xl font-bold lg:tracking-tight">Why we check what we check</h2>
+    <p class="text-lg mt-4 text-slate-600">
+      In modern software development, ensuring the quality, maintainability, and security of code is paramount. Our code review app is designed to
+      facilitate thorough reviews across multiple subjects, ensuring that code adheres to best practices, standards, and guidelines. This document provides
+      a detailed justification for why we test on the specified subjects, topics, and questions.
+    </p>
   </div>
+  <div class="mt-16">
+    <h2 class="text-3xl lg:text-4xl font-bold lg:tracking-tight">Introduction</h2>
+    <p class="text-lg mt-4 text-slate-600">
+      In modern software development, ensuring the quality, maintainability, and security of code is paramount. Our code review app is designed to
+      facilitate thorough reviews across multiple subjects, ensuring that code adheres to best practices, standards, and guidelines. This document provides
+      a detailed justification for why we test on the specified subjects, topics, and questions.
+    </p>
+  </div>
+  <div class="mt-16">
+    <h2 class="text-3xl lg:text-4xl font-bold lg:tracking-tight">Subjects and Justifications</h2>
+    <p class="text-lg mt-4 text-slate-600">
+      Our code review process comprehensively addresses the critical aspects of software development, focusing on quality, security, and maintainability. By
+      implementing quality gates and leveraging advanced tools, we ensure adherence to coding standards and best practices. Effective dependency management
+      and consistent project setup contribute to a streamlined and secure codebase. Prioritizing security protocols protects against vulnerabilities, while
+      a thorough testing strategy ensures that the application is reliable, performant, and accessible. This holistic approach provides a strong foundation
+      for exploring the specific subjects and justifications detailed below, equipping developers with the insights needed to create robust, high-quality
+      software.
+    </p>
+  </div>
+  
+  <div class="flex flex-col gap-8 mx-auto mt-16">
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 mt-16 gap-16">
+      <Fieldset
+        v-for="(subject, index) in subjects"
+        :key="index"
+        pt:legend="font-medium text-2xl !bg-transparent"
+        class="!bg-slate-50 !mb-6"
+        :legend="subject.legend"
+      >
+        <p class="mb-4">{{ subject.description }}</p>
+
+        <div v-for="(item, idx) in subject.items" :key="idx">
+          <h3 class="font-medium text-lg text-gray-800">{{ item.title }}</h3>
+          <p class="mb-4">{{ item.content }}</p>
+        </div>
+      </Fieldset>
+    </div>
+</div>
 </template>
