@@ -2,7 +2,7 @@
 const { answeredPercentage } = storeToRefs(useReviewStore());
 </script>
 <template>
-  <Message v-if="answeredPercentage < 99" class="max-w-4xl mx-auto mt-16 p-4 bg-slate-50" severity="none">
+  <Message v-if="answeredPercentage < 99" class="max-w-4xl mx-auto mt-16 p-4 bg-slate-50" severity="none" id="review-warning">
     <div class="flex gap-6 items-center">
       <Icon class="!h-32 !w-32" name="teenyicons:exclamation-circle-outline" size="48" />
       <div>
