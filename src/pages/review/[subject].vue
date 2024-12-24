@@ -1,10 +1,19 @@
 <script setup lang="ts">
-const { review } = storeToRefs(useReviewStore());
+const { review, subjects } = storeToRefs(useReviewStore());
 
 const route = useRoute();
 const id = route.params.subject;
 const confirm = useConfirm();
 const subject = computed(() => review.value[id]);
+
+/**
+ * Finds the subject and allows to pass a shift to get a defined amount of indexes back and forth on the subjects array
+ * Allows you to find the previous or nexts subjects
+ */
+const findSubject = (shift: number) => subjects.value[subjects.value.findIndex(s => s.key === id) + shift]
+
+const nextSubject = computed(() => findSubject(1));
+const previousSubject = computed(() => findSubject(-1));
 
 const markAsNotApplicable = (title: string) => {
   const topicIndex = subject.value.topics.findIndex((t) => t.title === title);
@@ -56,7 +65,16 @@ const confirmNotApplicable = (title: string) => {
         <p class="max-w-[500px]">{{ subject.description }}</p>
       </div>
     </section>
-    <h3 class="font-bold text-4xl text-gray-800 my-6">Topics</h3>
+    <h3 class="font-bold text-4xl text-gray-800 my-6">
+      <Button aria-label="Back" variant="link" @click="navigateTo('/review#review-progress')">
+        <Icon 
+          class="me-3 text-gray-600 min-w-[22px]"
+          name="uil:angle-left-b"
+          size="22"
+        />
+      </Button>
+      {{ subject.title }}
+    </h3>
     <div class="grid sm:grid-cols-1 md:grid-cols-2 mt-16 gap-16">
       <Fieldset v-for="topic of subject.topics" :key="topic.title" :legend="topic.title" pt:legend="font-bold text-xl" class="!mb-6">
         <div
@@ -79,6 +97,47 @@ const confirmNotApplicable = (title: string) => {
         </Fieldset>
       </Fieldset>
     </div>
+  </div>
+  <div class="mt-16 w-full flex justify-between">
+    <Button
+      v-if="previousSubject"
+      variant="link"
+      severity="secondary"
+      @click="navigateTo('/review/' + previousSubject.key)"
+    >
+      <Icon 
+        class="text-gray-600 min-w-[22px]"
+        name="uil:angle-left-b"
+        size="22"
+      />
+      {{ previousSubject.title }}
+    </Button>
+    <Button
+      v-if="nextSubject"
+      variant="link"
+      severity="secondary"
+      @click="navigateTo('/review/'+ nextSubject.key)"
+    >
+      {{ nextSubject.title }}
+      <Icon 
+        class="text-gray-600 min-w-[22px]"
+        name="uil:angle-right-b"
+        size="22"
+      />
+    </Button>
+    <Button
+      v-else
+      variant="link"
+      severity="secondary"
+      @click="navigateTo('/score')"
+    >
+      Go to score
+      <Icon 
+        class="me-3 text-gray-600 min-w-[22px]"
+        name="uil:angle-right-b"
+        size="22"
+      />
+    </Button>
   </div>
 </template>
 

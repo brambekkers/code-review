@@ -18,7 +18,8 @@ const { subjects, answeredPercentage } = storeToRefs(useReviewStore());
       </p>
 
       <TeamInfo />
-
+    </div>
+    <div id="review-progress" class="flex flex-col gap-3 mx-auto max-w-6xl mt-16">
       <label class="text-sm text-slate-500 flex justify-between item-end -mb-2 mt-16" for="progressBar">
         Your review progress
         <div class="font-bold">{{ Math.round(answeredPercentage) }}%</div>
@@ -28,7 +29,9 @@ const { subjects, answeredPercentage } = storeToRefs(useReviewStore());
 
     <div class="grid md:grid-cols-4 gap-10 mx-auto max-w-6xl mt-8">
       <div v-for="subject of subjects" class="group">
-        <ReviewSubjectTile :subject="subject" />
+        <ReviewSubjectTile
+          :subject="subject"
+        />
       </div>
     </div>
   </div>
