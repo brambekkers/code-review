@@ -13,7 +13,14 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['stores'],
   },
-  modules: ['@nuxtjs/tailwindcss', '@primevue/nuxt-module', '@nuxt/icon', '@pinia/nuxt', 'nuxt-vuefire'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@primevue/nuxt-module',
+    '@nuxt/icon',
+    '@pinia/nuxt',
+    'pinia-plugin-persistedstate/nuxt',
+    'nuxt-vuefire'
+  ],
   primevue: {
     options: {
       theme: {

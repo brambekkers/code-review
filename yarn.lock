@@ -1972,13 +1972,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pinia/nuxt@npm:^0.5.5":
-  version: 0.5.5
-  resolution: "@pinia/nuxt@npm:0.5.5"
+"@pinia/nuxt@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "@pinia/nuxt@npm:0.9.0"
   dependencies:
     "@nuxt/kit": "npm:^3.9.0"
-    pinia: "npm:^2.2.3"
-  checksum: 10c0/be38b7d8d148dd12632649496138105a9956c42ce2b99fad35d277aaca46b252fb26d66b984fad8ccf2c1cd3b9407f66816816fa21cab2e60f0b304734a4d677
+  peerDependencies:
+    pinia: ^2.3.0
+  checksum: 10c0/04e6a3889455c54c7c419e28e335f41bd17a9a7542c57e5ea360c689a9f2a38f4b0493a5a8e5199dae7b2f78e44307d3155bc694c063dba258f323ed81d63890
   languageName: node
   linkType: hard
 
@@ -3431,7 +3432,7 @@ __metadata:
     "@nuxt/icon": "npm:^1.6.1"
     "@nuxt/kit": "npm:^3.14.1592"
     "@nuxtjs/tailwindcss": "npm:^6.12.2"
-    "@pinia/nuxt": "npm:^0.5.5"
+    "@pinia/nuxt": "npm:^0.9.0"
     "@primevue/nuxt-module": "npm:^4.2.2"
     "@primevue/themes": "npm:^4.2.2"
     "@tailwindcss/typography": "npm:^0.5.14"
@@ -3439,6 +3440,7 @@ __metadata:
     nuxt: "npm:^3.14.0"
     nuxt-vuefire: "npm:^1.0.4"
     pinia: "npm:^2.2.6"
+    pinia-plugin-persistedstate: "npm:^4.2.0"
     primevue: "npm:^4.2.2"
     tailwindcss: "npm:^3.4.17"
     typescript: "npm:^5.7.2"
@@ -3864,6 +3866,13 @@ __metadata:
   version: 1.0.1
   resolution: "deep-equal@npm:1.0.1"
   checksum: 10c0/bef838ef9824e124d10335deb9c7540bfc9f2f0eab17ad1bb870d0eee83ee4e7e6f6f892e5eebc2bd82759a76676926ad5246180097e28e57752176ff7dae888
+  languageName: node
+  linkType: hard
+
+"deep-pick-omit@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "deep-pick-omit@npm:1.2.1"
+  checksum: 10c0/6010abbf022e3dd857c140847cd51be6c55e9470f421bb39b6def3984232656668460bc0f0e522f40ae413f6406e13228fda0a88970c13b251d903c864cc1cde
   languageName: node
   linkType: hard
 
@@ -6803,7 +6812,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pinia@npm:^2.2.3, pinia@npm:^2.2.6":
+"pinia-plugin-persistedstate@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "pinia-plugin-persistedstate@npm:4.2.0"
+  dependencies:
+    "@nuxt/kit": "npm:^3.14.1592"
+    deep-pick-omit: "npm:^1.2.1"
+    defu: "npm:^6.1.4"
+    destr: "npm:^2.0.3"
+  peerDependencies:
+    "@pinia/nuxt": ">=0.9.0"
+    pinia: ">=2.3.0"
+  peerDependenciesMeta:
+    "@pinia/nuxt":
+      optional: true
+    pinia:
+      optional: true
+  checksum: 10c0/33b2ec965de56ee9f6b9c20576f68d2b86dd4ab2f17348de0b8943b5ebcfc95b6ccb9b26cad6fe791f6c822e85e8ff991345fbe0ea08cd0d1c2b942eb0c804b6
+  languageName: node
+  linkType: hard
+
+"pinia@npm:^2.2.6":
   version: 2.3.0
   resolution: "pinia@npm:2.3.0"
   dependencies:
