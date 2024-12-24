@@ -11,20 +11,38 @@ const randomPlaceholder = computed(() => {
   const placeholders = reviewPlaceholders[question.value.score as keyof typeof reviewPlaceholders];
   return placeholders[Math.floor(Math.random() * placeholders.length)];
 });
+
+const collapsed = ref(true);
 </script>
 
 <template>
-  <Panel toggleable collapsed>
+  <Panel toggleable :collapsed="collapsed">
     <template #header>
-      <div class="flex items-center">
+      <div class="flex items-center cursor-pointer w-full" @click="collapsed=!collapsed">
         <Icon
-          v-if="(typeof question.score === 'number' && question.comment) || question.score === 0"
+          v-if="question.score === 0"
+          class="me-3 text-gray-600 mw-22"
+          name="uil:times-circle"
+          size="22"
+        />
+        <Icon
+          v-else-if="typeof question.score === 'number' && question.comment"
+          class="me-3 text-green-600 mw-22"
+          name="uil:comment-check"
+          size="22"
+        />
+        <Icon
+          v-else-if="typeof question.score === 'number' || question.comment"
           class="me-3 text-green-600"
           name="uil:check-circle"
           size="22"
         />
-        <Icon v-else-if="typeof question.score === 'number' || question.comment" class="me-3 text-orange-600" name="uil:info-circle" size="22" />
-        <Icon v-else class="me-3 text-red-600" name="uil:times-circle" size="22" />
+        <Icon 
+          v-else
+          class="me-3 text-gray-600 min-w-[22px]"
+          name="uil:circle"
+          size="22"
+        />
         <h3 class="font-semibold">{{ question.question }}</h3>
       </div>
     </template>
