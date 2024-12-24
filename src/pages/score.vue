@@ -16,7 +16,7 @@ const createPdf = () => {
   <div>
     <LayoutSectionHead>
       <template v-slot:title>Score</template>
-      <template v-slot:desc>The complete review ready to submit</template>
+      <template v-slot:desc>The complete review ready to be shared</template>
     </LayoutSectionHead>
     <ScoreWarning />
 
