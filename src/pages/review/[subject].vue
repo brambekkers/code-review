@@ -98,7 +98,7 @@ const confirmNotApplicable = (title: string) => {
       </Fieldset>
     </div>
   </div>
-  <div class="mt-16 w-full flex justify-between">
+  <div class="mt-16 w-full flex justify-center">
     <Button
       v-if="previousSubject"
       variant="link"

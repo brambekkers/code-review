@@ -8,12 +8,12 @@ export const useScoreStore = defineStore('score', {
     const { review } = storeToRefs(useReviewStore());
 
     const getScoreRating = (score: number) => {
-      if (score >= 90) return 'Excellent';
-      if (score >= 80) return 'Great';
-      if (score >= 70) return 'Good';
-      if (score >= 60) return 'Okay';
-      if (score >= 50) return 'Bad';
-      return 'Very Bad';
+      if (score >= 90) return 'Exemplary';
+      if (score >= 80) return 'Great, but skips optimizations';
+      if (score >= 70) return 'Good, but skips standards';
+      if (score >= 60) return 'Could be improved';
+      if (score >= 50) return 'Needs to be improved';
+      return 'Needs rework to be improved';
     };
 
     const subjectScores = computed(() => {
