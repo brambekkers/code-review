@@ -40,16 +40,16 @@ To set up the project locally, follow these steps:
    cd code-review
    ```
 
-3. Install the dependencies:
+3. Install the dependencies ([requires Yarn](https://yarnpkg.com/getting-started/install)):
 
    ```bash
-   npm install
+   yarn
    ```
 
 4. Run the application:
 
    ```bash
-   npm run dev
+   yarn dev
    ```
 
 5. Open your browser and navigate to `http://localhost:3000` to use the app.
@@ -60,7 +60,7 @@ Feel free to contribute to the project by forking the repository and creating a 
 
 ## License
 
-This project is a personal project but build for ABN Amro.
+This project is a personal project but build for our company reviews.
 
 ## Contact
 

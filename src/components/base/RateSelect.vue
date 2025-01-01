@@ -2,12 +2,12 @@
 const modelValue = defineModel();
 
 const tiers = ref([
-  { code: 'A', name: 'Excellent', score: 6, color: '#386641', textColor: 'white' },
+  { code: 'A', name: 'Exemplary', score: 6, color: '#386641', textColor: 'white' },
   { code: 'B ', name: 'Great', score: 5, color: '#6a994e', textColor: 'white' },
   { code: 'C ', name: 'Good', score: 4, color: '#a7c957', textColor: 'black' },
-  { code: 'D ', name: 'Okay', score: 3, color: '#fdf7d6', textColor: 'black' },
-  { code: 'E', name: 'Bad', score: 2, color: '#de6560', textColor: 'white' },
-  { code: 'F', name: 'Very Bad', score: 1, color: '#ca3d3f', textColor: 'white' },
+  { code: 'D ', name: 'Could be improved', score: 3, color: '#fdf7d6', textColor: 'black' },
+  { code: 'E', name: 'Needs improvement', score: 2, color: '#de6560', textColor: 'white' },
+  { code: 'F', name: 'Needs rework', score: 1, color: '#ca3d3f', textColor: 'white' },
   { code: 'X', name: 'Not applicable', score: 0, color: '#e2e8f0', textColor: 'black' },
 ]);
 

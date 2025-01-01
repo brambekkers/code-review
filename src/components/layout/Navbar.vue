@@ -12,10 +12,6 @@ const menuitems = [
     title: 'Score',
     path: '/score',
   },
-  {
-    title: 'Justification',
-    path: '/justification',
-  },
 ];
 
 const route = useRoute();

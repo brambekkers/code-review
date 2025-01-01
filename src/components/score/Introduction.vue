@@ -12,11 +12,12 @@ const reviewersString = computed(() => {
 <template>
   <Fieldset class="!mx-auto !max-w-4xl" pt:legend="text-xl" legend="Introduction">
     <p>
-      This is the review for the team: <strong>{{ team.teamName || 'teamName' }} </strong>. This review is written by {{ reviewersString }} and is about the
-      application <strong>{{ team.applicationName || 'applicationName' }}</strong
-      >. On average, the team scored <strong>{{ totalScore.totalScore }} of {{ totalScore.maxScore }}</strong> points. That means
-      <strong> {{ formatPercentage(totalScore.percentage, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }}</strong> on average, with this number the
-      application is called: <strong></strong>
+      This is the review for the team <strong>{{ team.teamName || '<developer-anonimous>' }} </strong>.
+      This review is written by <strong>{{ reviewersString || '<anon>' }}</strong> and is about the application <strong>{{ team.applicationName || '<my-app>' }}</strong>. 
+      On average, the team scored <strong>{{ totalScore.totalScore }} of {{ totalScore.maxScore }}</strong> possible points.
+      That means
+      <strong> {{ formatPercentage(totalScore.percentage, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) }}</strong> of the total score, with this rating the
+      application evaluation is: <strong></strong>
     </p>
 
     <h3 class="text-lg text-gray-800 text-center my-6 font-bold border rounded w-max px-5 py-3 mx-auto bg-slate-50">{{ totalScore.score }}</h3>

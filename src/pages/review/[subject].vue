@@ -1,10 +1,19 @@
 <script setup lang="ts">
-const { review } = storeToRefs(useReviewStore());
+const { review, subjects } = storeToRefs(useReviewStore());
 
 const route = useRoute();
 const id = route.params.subject;
 const confirm = useConfirm();
 const subject = computed(() => review.value[id]);
+
+/**
+ * Finds the subject and allows to pass a shift to get a defined amount of indexes back and forth on the subjects array
+ * Allows you to find the previous or nexts subjects
+ */
+const findSubject = (shift: number) => subjects.value[subjects.value.findIndex(s => s.key === id) + shift]
+
+const nextSubject = computed(() => findSubject(1));
+const previousSubject = computed(() => findSubject(-1));
 
 const markAsNotApplicable = (title: string) => {
   const topicIndex = subject.value.topics.findIndex((t) => t.title === title);
@@ -56,28 +65,79 @@ const confirmNotApplicable = (title: string) => {
         <p class="max-w-[500px]">{{ subject.description }}</p>
       </div>
     </section>
-    <h3 class="font-bold text-4xl text-gray-800 my-6">Topics</h3>
+    <h3 class="font-bold text-4xl text-gray-800 my-6">
+      <Button aria-label="Back" variant="link" @click="navigateTo('/review#review-progress')">
+        <Icon 
+          class="me-3 text-gray-600 min-w-[22px]"
+          name="uil:angle-left-b"
+          size="22"
+        />
+      </Button>
+      {{ subject.title }}
+    </h3>
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 mt-16 gap-16">
+      <Fieldset v-for="topic of subject.topics" :key="topic.title" :legend="topic.title" pt:legend="font-bold text-xl" class="!mb-6">
+        <div
+          v-html="topic?.description"
+          class="border-2 border-dashed border-surface-200 h-full rounded bg-slate-50 font-medium p-5 description [&>*]:list-disc"
+        />
+        <FloatLabel class="mt-6" variant="on">
+          <label :for="topic.title + 'label'">Your feedback for the whole topic...</label>
+          <Textarea v-model="topic.comment" :id="topic.title + 'label'" :disabled="!topic.applicable" class="w-full" rows="5" cols="30" />
+        </FloatLabel>
+        <div class="flex justify-end px-1">
+          <a v-if="topic.applicable" class="text-red-600 font-medium text-sm cursor-pointer" @click="confirmNotApplicable(topic.title)"
+            >Mark entire category as <b>'Not Applicable'</b></a
+          >
+          <a v-if="!topic.applicable" class="font-medium text-sm cursor-pointer" @click="markAsUnset(topic.title)">Mark entire category as <b>'Unset'</b></a>
+        </div>
 
-    <Fieldset v-for="topic of subject.topics" :key="topic.title" :legend="topic.title" pt:legend="font-bold text-xl" class="!mb-6">
-      <div
-        v-html="topic?.description"
-        class="border-2 border-dashed border-surface-200 h-full rounded bg-slate-50 font-medium p-5 description [&>*]:list-disc"
-      />
-      <FloatLabel class="mt-6" variant="on">
-        <label :for="topic.title + 'label'">Your feedback for the whole topic...</label>
-        <Textarea v-model="topic.comment" :id="topic.title + 'label'" :disabled="!topic.applicable" class="w-full" rows="5" cols="30" />
-      </FloatLabel>
-      <div class="flex justify-end px-1">
-        <a v-if="topic.applicable" class="text-red-600 font-medium text-sm cursor-pointer" @click="confirmNotApplicable(topic.title)"
-          >Mark entire category as <b>'Not Applicable'</b></a
-        >
-        <a v-if="!topic.applicable" class="font-medium text-sm cursor-pointer" @click="markAsUnset(topic.title)">Mark entire category as <b>'Unset'</b></a>
-      </div>
-
-      <Fieldset legend="questions" toggleable class="!mb-5 !bg-slate-50" pt:legend="!bg-transparent">
-        <ReviewQuestionRow v-for="(question, i) of topic.questions" v-model="topic.questions[i]" class="my-3" :key="question.title" />
+        <Fieldset legend="Checks" toggleable class="!mb-5 !bg-slate-50" pt:legend="!bg-transparent">
+          <ReviewQuestionRow v-for="(question, i) of topic.questions" v-model="topic.questions[i]" class="my-3" :key="question.title" />
+        </Fieldset>
       </Fieldset>
-    </Fieldset>
+    </div>
+  </div>
+  <div class="mt-16 w-full flex justify-center">
+    <Button
+      v-if="previousSubject"
+      variant="link"
+      severity="secondary"
+      @click="navigateTo('/review/' + previousSubject.key)"
+    >
+      <Icon 
+        class="text-gray-600 min-w-[22px]"
+        name="uil:angle-left-b"
+        size="22"
+      />
+      {{ previousSubject.title }}
+    </Button>
+    <Button
+      v-if="nextSubject"
+      variant="link"
+      severity="secondary"
+      @click="navigateTo('/review/'+ nextSubject.key)"
+    >
+      {{ nextSubject.title }}
+      <Icon 
+        class="text-gray-600 min-w-[22px]"
+        name="uil:angle-right-b"
+        size="22"
+      />
+    </Button>
+    <Button
+      v-else
+      variant="link"
+      severity="secondary"
+      @click="navigateTo('/score')"
+    >
+      Go to score
+      <Icon 
+        class="me-3 text-gray-600 min-w-[22px]"
+        name="uil:angle-right-b"
+        size="22"
+      />
+    </Button>
   </div>
 </template>
 
