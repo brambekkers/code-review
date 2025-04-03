@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const modelValue = defineModel();
 const options = ref([
-  { label: 'True', value: 6 },
-  { label: 'False', value: 1 },
+  { label: 'Yes', value: 6 },
+  { label: 'No', value: 1 },
   { label: 'Not applicable', value: 0 },
 ]);
 </script>
