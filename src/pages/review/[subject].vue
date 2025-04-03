@@ -2,21 +2,25 @@
 const { review, subjects } = storeToRefs(useReviewStore());
 
 const route = useRoute();
-const id = route.params.subject;
+const subjectId = route.params.subject;
 const confirm = useConfirm();
-const subject = computed(() => review.value[id]);
+const subject = computed(() => review.value[subjectId]);
 
 /**
  * Finds the subject and allows to pass a shift to get a defined amount of indexes back and forth on the subjects array
  * Allows you to find the previous or nexts subjects
  */
-const findSubject = (shift: number) => subjects.value[subjects.value.findIndex(s => s.key === id) + shift]
+const findSubject = (shift: number) => subjects.value[subjects.value.findIndex((s: {key: string}) => s.key === subjectId) + shift]
 
 const nextSubject = computed(() => findSubject(1));
 const previousSubject = computed(() => findSubject(-1));
 
+const findSubjectIndex = (title: string) => {
+  return subject.value.topics.findIndex((t: {title: string}) => t.title === title);
+}
+
 const markAsNotApplicable = (title: string) => {
-  const topicIndex = subject.value.topics.findIndex((t) => t.title === title);
+  const topicIndex = findSubjectIndex(title);
   subject.value.topics[topicIndex].applicable = false;
   subject.value.topics[topicIndex].comment = '';
   subject.value.topics[topicIndex].questions.forEach((q) => {
@@ -26,7 +30,7 @@ const markAsNotApplicable = (title: string) => {
 };
 
 const markAsUnset = (title: string) => {
-  const topicIndex = subject.value.topics.findIndex((t) => t.title === title);
+  const topicIndex = findSubjectIndex(title);
   subject.value.topics[topicIndex].applicable = true;
   subject.value.topics[topicIndex].questions.forEach((q) => {
     q.score = null;
@@ -35,7 +39,7 @@ const markAsUnset = (title: string) => {
 
 const confirmNotApplicable = (title: string) => {
   confirm.require({
-    message: 'Are you sure you want to proceed? All questions will be marked as "Not Applicable" and the feedback that is given will be lost.',
+    message: `Are you sure you want to proceed? All questions in "${title}" will be marked as "Not Applicable" and the feedback that is given will be lost.`,
     header: 'Confirmation',
     rejectProps: {
       label: 'Cancel',
@@ -43,7 +47,7 @@ const confirmNotApplicable = (title: string) => {
       outlined: true,
     },
     acceptProps: {
-      label: 'Not Applicable',
+      label: `I'm sure`,
       severity: 'contrast',
     },
     accept: () => {
@@ -75,7 +79,7 @@ const confirmNotApplicable = (title: string) => {
       </Button>
       {{ subject.title }}
     </h3>
-    <div class="grid sm:grid-cols-1 md:grid-cols-2 mt-16 gap-16">
+    <div class="grid grid-cols-1 mt-16 gap-16">
       <Fieldset v-for="topic of subject.topics" :key="topic.title" :legend="topic.title" pt:legend="font-bold text-xl" class="!mb-6">
         <div
           v-html="topic?.description"
@@ -85,14 +89,34 @@ const confirmNotApplicable = (title: string) => {
           <label :for="topic.title + 'label'">Your feedback for the whole topic...</label>
           <Textarea v-model="topic.comment" :id="topic.title + 'label'" :disabled="!topic.applicable" class="w-full" rows="5" cols="30" />
         </FloatLabel>
-        <div class="flex justify-end px-1">
-          <a v-if="topic.applicable" class="text-red-600 font-medium text-sm cursor-pointer" @click="confirmNotApplicable(topic.title)"
-            >Mark entire category as <b>'Not Applicable'</b></a
-          >
-          <a v-if="!topic.applicable" class="font-medium text-sm cursor-pointer" @click="markAsUnset(topic.title)">Mark entire category as <b>'Unset'</b></a>
-        </div>
+        
 
-        <Fieldset legend="Checks" toggleable class="!mb-5 !bg-slate-50" pt:legend="!bg-transparent">
+        <Fieldset :legend="topic.title + ' Checks'" toggleable class="!mb-5 !bg-slate-50" pt:legend="!bg-transparent">
+          <div class="flex justify-end flex-wrap justify-end">
+            <Button
+              v-if="topic.applicable"
+              severity="secondary"
+              @click="confirmNotApplicable(topic.title)"
+            >
+              Mark checks as 'Not Applicable'
+              <Icon 
+                class="min-w-[22px]"
+                name="uil:times-circle"
+                size="22"
+              />
+            </Button>
+            <Button
+              severity="secondary"
+              @click="markAsUnset(topic.title)"
+            >
+              Mark checks as 'Unset'
+              <Icon 
+                class="min-w-[22px]"
+                name="uil:circle"
+                size="22"
+              />
+            </Button>
+          </div>
           <ReviewQuestionRow v-for="(question, i) of topic.questions" v-model="topic.questions[i]" class="my-3" :key="question.title" />
         </Fieldset>
       </Fieldset>

@@ -19,7 +19,7 @@ const open = ref(false);
 </script>
 
 <template>
-  <div class="max-w-screen-xl mx-auto px-5">
+  <div class="sm:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-5">
     <header class="flex flex-col lg:flex-row justify-between items-center my-5">
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg">The<span class="font-bold text-slate-800">Code</span><span class="text-slate-500">review</span> </a>

@@ -5,6 +5,7 @@ const question = defineModel<Question>({ required: true });
 
 watch(() => question.value.score, useReviewStore().nextQuestion);
 
+// TODO: refactor this and change the if conditions to mark what is set/unset/touched/untouched
 const randomPlaceholder = computed(() => {
   if (question.value.score === 0) return '';
   if (typeof question.value.score !== 'number') return 'Score this question...';
@@ -32,7 +33,7 @@ const collapsed = ref(true);
           size="22"
         />
         <Icon
-          v-else-if="typeof question.score === 'number' || question.comment"
+          v-else-if="typeof question.score === 'number' && question.comment"
           class="me-3 text-green-600"
           name="uil:check-circle"
           size="22"
@@ -49,7 +50,14 @@ const collapsed = ref(true);
     <div v-if="question" class="flex h-full w-full flex-col items-end">
       <BaseRateSelect v-if="question.questionType === 'rating'" v-model="question.score" class="!w-60" />
       <BaseTrueFalse v-if="question.questionType === 'trueFalse'" v-model="question.score" />
-      <Textarea v-model="question.comment" :placeholder="randomPlaceholder" :disabled="question.score === 0" class="w-full mt-4" rows="5" cols="30" />
+
+      <Textarea
+        v-model="question.comment"
+        :placeholder="randomPlaceholder"
+        class="w-full mt-4"
+        rows="5"
+        cols="30"
+      />
     </div>
   </Panel>
 </template>
