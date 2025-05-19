@@ -31,7 +31,7 @@ const createPdf = () => {
       <ScoreSubjectScore />
       <ScoreTopics />
 
-      <!-- <Fieldset class="!max-w-4xl !mx-auto w-full" legend="Review"> Rest of the written review... </Fieldset> -->
+      <!-- <Fieldset class="max-w-4xl! mx-auto! w-full" legend="Review"> Rest of the written review... </Fieldset> -->
     </section>
   </div>
 </template>

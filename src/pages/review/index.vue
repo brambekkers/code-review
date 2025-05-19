@@ -19,7 +19,7 @@ const { subjects, answeredPercentage } = storeToRefs(useReviewStore());
 
       <TeamInfo />
     </div>
-    <div id="review-progress" class="flex flex-col gap-3 mx-auto max-w-screen-xl xl:max-w-screen-2xl mt-16">
+    <div id="review-progress" class="flex flex-col gap-3 mx-auto max-w-(--breakpoint-xl) xl:max-w-(--breakpoint-2xl) mt-16">
       <label class="text-sm text-slate-500 flex justify-between item-end -mb-2 mt-16" for="progressBar">
         Your review progress
         <div class="font-bold">{{ Math.round(answeredPercentage) }}%</div>

@@ -1,4 +1,5 @@
 import Aura from '@primevue/themes/aura';
+import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -13,8 +14,12 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['stores'],
   },
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
   modules: [
-    '@nuxtjs/tailwindcss',
     '@primevue/nuxt-module',
     '@nuxt/icon',
     '@pinia/nuxt',

@@ -19,10 +19,10 @@ const removeReviewer = (remover: string) => {
 <template>
   <div class="max-w-[400px]">
     <OverlayBadge severity="danger">
-      <Button class="text-contrast" label="Team info" @click="visible = !visible">
+      <Button class="text-contrast" label="Team info" @click="visible = visible!">
         <Icon name="fluent:people-team-20-filled" size="22" />
         Add the team & review base information here
-        <Dialog v-model:visible="visible" modal class="w-[95%] md:!w-5/6 max-w-[1000px] pb-6" header="Team information">
+        <Dialog v-model:visible="visible" modal class="w-[95%] md:w-5/6! max-w-[1000px] pb-6" header="Team information">
           <p class="text-sm">
             Here you provide the necessary details about the team that you are reviewing. This information is crucial and it will help us maintain accurate
             records and facilitate effective collaboration within the team.
@@ -45,11 +45,11 @@ const removeReviewer = (remover: string) => {
               </template>
             </div>
           </div>
-          <Divider class="!mt-7" />
+          <Divider class="mt-7!" />
           <label class="text-xs font-bold -mb-2">Reviewers</label>
 
           <div class="flex w-full gap-2">
-            <InputText type="text" v-model="nameField" class="flex-grow" placeholder="Reviewer name" />
+            <InputText type="text" v-model="nameField" class="grow" placeholder="Reviewer name" />
             <Button label="Add reviewer" severity="contrast" @click="addReviewer()" :disabled="!nameField" />
           </div>
           <div v-if="!reviewers.length" class="text-sm mt-2 text-gray-500">Fill in name to add reviewer(s) for this project</div>
@@ -59,10 +59,10 @@ const removeReviewer = (remover: string) => {
               severity="danger"
               value="x"
               size="small"
-              pt:pcbadge:root="cursor-pointer !min-w-4 !h-4"
+              pt:pcbadge:root="cursor-pointer min-w-4! h-4!"
               @click="removeReviewer(reviewer)"
             >
-              <Chip :label="reviewer" class="!text-sm !py-1" />
+              <Chip :label="reviewer" class="text-sm! py-1!" />
             </OverlayBadge>
           </div>
         </Dialog>
