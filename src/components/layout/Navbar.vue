@@ -22,7 +22,7 @@ const open = ref(false);
   <div class="sm:max-w-(--breakpoint-xl) 2xl:max-w-(--breakpoint-2xl) mx-auto px-5">
     <header class="flex flex-col lg:flex-row justify-between items-center my-5">
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg">The<span class="font-bold text-slate-800">Code</span><span class="text-slate-500">review</span> </a>
+        <nuxt-link to="/" class="text-lg">The<span class="font-bold text-slate-800">Code</span><span class="text-slate-500">review</span></nuxt-link>
         <div class="block lg:hidden">
           <button @click="open = !open" class="text-gray-800">
             <svg fill="currentColor" class="w-4 h-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
