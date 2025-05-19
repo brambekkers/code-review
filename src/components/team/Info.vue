@@ -19,7 +19,7 @@ const removeReviewer = (remover: string) => {
 <template>
   <div class="max-w-[400px]">
     <OverlayBadge severity="danger">
-      <Button class="text-contrast" label="Team info" @click="visible = visible!">
+      <Button class="text-contrast" label="Team info" @click="visible = !visible">
         <Icon name="fluent:people-team-20-filled" size="22" />
         Add the team & review base information here
         <Dialog v-model:visible="visible" modal class="w-[95%] md:w-5/6! max-w-[1000px] pb-6" header="Team information">
