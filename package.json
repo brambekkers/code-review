@@ -11,28 +11,28 @@
     "login": "firebase login",
     "deploy": "firebase deploy"
   },
-  "packageManager": "yarn@4.5.3",
   "dependencies": {
     "@fitx/inactive-timer": "^2.3.0",
-    "@nuxt/icon": "^1.6.1",
-    "@nuxtjs/tailwindcss": "^6.12.2",
-    "@pinia/nuxt": "^0.9.0",
-    "@primevue/nuxt-module": "^4.2.2",
-    "@primevue/themes": "^4.2.2",
-    "nuxt": "^3.14.0",
-    "nuxt-vuefire": "^1.0.4",
-    "pinia": "^2.2.6",
-    "pinia-plugin-persistedstate": "^4.2.0",
-    "primevue": "^4.2.2",
-    "vue": "^3.5.12"
+    "@nuxt/icon": "^1.13.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@pinia/nuxt": "^0.11.0",
+    "@primevue/forms": "^4.3.4",
+    "@primevue/nuxt-module": "^4.3.4",
+    "@primevue/themes": "^4.3.4",
+    "nuxt": "^3.17.0",
+    "nuxt-vuefire": "^1.0.5",
+    "pinia": "^3.0.2",
+    "pinia-plugin-persistedstate": "^4.3.0",
+    "primevue": "^4.3.4",
+    "vue": "^3.5.14"
   },
   "devDependencies": {
-    "@nuxt/kit": "^3.14.1592",
-    "@tailwindcss/typography": "^0.5.14",
+    "@nuxt/kit": "^3.17.3",
+    "@tailwindcss/typography": "^0.5.16",
     "firebase": "^11.6.0",
     "firebase-tools": "^14.1.0",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.2",
+    "typescript": "^5.8.3",
     "vuefire": "^3.2.1"
   }
 }
