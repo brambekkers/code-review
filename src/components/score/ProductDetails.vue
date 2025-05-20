@@ -10,7 +10,7 @@ const { team } = storeToRefs(useTeamStore());
         <div class="w-1/3 capitalize">{{ formatKey(key) }}</div>
 
         <!-- Value if Date -->
-        <div v-if="key === 'date'" class="font-semibold">{{ formatDate(item) }}</div>
+        <div v-if="key === 'date'" class="font-semibold">{{ formatDate(item.date) }}</div>
 
         <!-- Value if Array -->
         <div v-else-if="key === 'reviewers'">
