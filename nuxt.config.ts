@@ -43,9 +43,9 @@ export default defineNuxtConfig({
     },
     config: {
       apiKey: 'AIzaSyBPwpOPDoJ6kheG_qDYxJFdVk3PtLUrca0',
-      authDomain: 'code-review-f53d6.firebaseapp.com',
-      projectId: 'code-review-f53d6',
-      storageBucket: 'code-review-f53d6.appspot.com',
+      authDomain: 'code-review-8419e.firebaseapp.com',
+      projectId: 'code-review-8419e',
+      storageBucket: 'code-review-8419e.appspot.com',
       messagingSenderId: '328549315397',
       appId: '1:328549315397:web:e9da32c9f766b0cf24442c',
       measurementId: 'G-4C9D38WGLW',

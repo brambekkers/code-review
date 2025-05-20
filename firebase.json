@@ -1,16 +1,14 @@
 {
   "hosting": {
-    "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "public": ".output/public",
+    "cleanUrls": true,
+    "trailingSlash": false,
     "rewrites": [
       {
-        "source": "**",
+        "source": "/**",
         "destination": "/index.html"
       }
-    ]
+    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }
