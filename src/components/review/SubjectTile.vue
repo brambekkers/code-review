@@ -11,7 +11,7 @@ const props = defineProps<{
 <template>
   <div class="group">
     <div
-      class="relative w-full aspect-square bg-cover rounded transition flex items-center group-hover:-translate-y-1 group-hover:shadow-xl group-hover:scale-105 cursor-pointer"
+      class="relative w-full aspect-square bg-cover rounded-sm transition flex items-center group-hover:-translate-y-1 group-hover:shadow-xl group-hover:scale-105 cursor-pointer"
       :style="`background-image: url(..${subject.img});`"
       @click="navigateTo(`/review/${props.subject.key}`)"
     >

@@ -10,7 +10,7 @@ const reviewersString = computed(() => {
 </script>
 
 <template>
-  <Fieldset class="!mx-auto !max-w-4xl" pt:legend="text-xl" legend="Introduction">
+  <Fieldset class="mx-auto! max-w-4xl!" pt:legend="text-xl" legend="Introduction">
     <p>
       This is the review for the team <strong>{{ team.teamName || '<developer-anonimous>' }} </strong>.
       This review is written by <strong>{{ reviewersString || '<anon>' }}</strong> and is about the application <strong>{{ team.applicationName || '<my-app>' }}</strong>. 
@@ -20,7 +20,7 @@ const reviewersString = computed(() => {
       application evaluation is: <strong></strong>
     </p>
 
-    <h3 class="text-lg text-gray-800 text-center my-6 font-bold border rounded w-max px-5 py-3 mx-auto bg-slate-50">{{ totalScore.score }}</h3>
+    <h3 class="text-lg text-gray-800 text-center my-6 font-bold border rounded-sm w-max px-5 py-3 mx-auto bg-slate-50">{{ totalScore.score }}</h3>
 
     <p>
       In this review, we will take a further look at certain key aspects of the application. These include its quality gates, dependencies, setup, styling,

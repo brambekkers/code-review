@@ -197,8 +197,8 @@ const subjects = [
       <Fieldset
         v-for="(subject, index) in subjects"
         :key="index"
-        pt:legend="font-medium text-2xl !bg-transparent"
-        class="!bg-slate-50 !mb-6"
+        pt:legend="font-medium text-2xl bg-transparent!"
+        class="bg-slate-50! mb-6!"
         :legend="subject.legend"
       >
         <p class="mb-4">{{ subject.description }}</p>

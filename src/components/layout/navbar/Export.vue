@@ -44,8 +44,8 @@ const stopForever = () => {
       :visible="!isRunning && !stoppedForever"
       modal
       :closable="false"
-      class="!w-11/12 md:!w-[80vw] !max-w-[600px] !border-none !overflow-hidden"
-      pt:header="!bg-slate-950 text-white !py-3 font-semibold text-xl mb-4 gap-4 !justify-start"
+      class="w-11/12! md:w-[80vw]! max-w-[600px]! border-none! overflow-hidden!"
+      pt:header="bg-slate-950! text-white py-3! font-semibold text-xl mb-4 gap-4 justify-start!"
     >
       <template #header>
         <Icon name="icon-park-outline:save-one" size="22" />
@@ -66,8 +66,8 @@ const stopForever = () => {
 
       <template #footer>
         <div class="flex justify-end gap-4 w-full">
-          <Button type="button" label="Cancel" outlined severity="contrast" class="!px-6" @click="neverShow ? stopForever() : useSaveStore().restart()" />
-          <Button type="button" label="Export" severity="contrast" class="!px-6" @click="exportData" />
+          <Button type="button" label="Cancel" outlined severity="contrast" class="px-6!" @click="neverShow ? stopForever() : useSaveStore().restart()" />
+          <Button type="button" label="Export" severity="contrast" class="px-6!" @click="exportData" />
         </div>
       </template>
     </Dialog>

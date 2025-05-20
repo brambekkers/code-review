@@ -19,6 +19,7 @@
     "@primevue/forms": "^4.3.4",
     "@primevue/nuxt-module": "^4.3.4",
     "@primevue/themes": "^4.3.4",
+    "@tailwindcss/vite": "^4.1.7",
     "nuxt": "^3.17.0",
     "nuxt-vuefire": "^1.0.5",
     "pinia": "^3.0.2",
@@ -31,7 +32,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "firebase": "^11.6.0",
     "firebase-tools": "^14.1.0",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.1.7",
     "typescript": "^5.8.3",
     "vuefire": "^3.2.1"
   }

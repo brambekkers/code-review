@@ -7,6 +7,6 @@ onMounted(() => {
 <template>
   <NuxtLayout>
     <NuxtPage />
-    <ConfirmDialog class="max-w-[30rem]"></ConfirmDialog>
+    <ConfirmDialog class="max-w-120"></ConfirmDialog>
   </NuxtLayout>
 </template>

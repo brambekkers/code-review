@@ -48,7 +48,7 @@ const collapsed = ref(true);
       </div>
     </template>
     <div v-if="question" class="flex h-full w-full flex-col items-end">
-      <BaseRateSelect v-if="question.questionType === 'rating'" v-model="question.score" class="!w-60" />
+      <BaseRateSelect v-if="question.questionType === 'rating'" v-model="question.score" class="w-60!" />
       <BaseTrueFalse v-if="question.questionType === 'trueFalse'" v-model="question.score" />
 
       <Textarea

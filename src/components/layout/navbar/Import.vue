@@ -58,8 +58,8 @@ const upload = (input: HTMLInputElement) => {
 <template>
   <div>
     <Toast />
-    <Button label="Import" class="!px-6 !py-3" severity="contrast" @click="modalOpen = !modalOpen" />
-    <Dialog v-model:visible="modalOpen" modal header="Import" class="min-w-[350px] text-center" :draggable="false" pt:header="!pb-1">
+    <Button label="Import" class="px-6! py-3!" severity="contrast" @click="modalOpen = !modalOpen" />
+    <Dialog v-model:visible="modalOpen" modal header="Import" class="min-w-[350px] text-center" :draggable="false" pt:header="pb-1!">
       Select a review file to import
       <div class="w-full h-full flex items-center justify-center mt-2">
         <FileUpload
@@ -70,7 +70,7 @@ const upload = (input: HTMLInputElement) => {
           :maxFileSize="1000000"
           customUpload
           @uploader="upload"
-          pt:pc-choose-button:root="!bg-black border !border-black !outline-black text-white"
+          pt:pc-choose-button:root="bg-black! border border-black! outline-black! text-white"
         />
       </div>
     </Dialog>

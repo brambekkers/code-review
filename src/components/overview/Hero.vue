@@ -20,10 +20,10 @@
       </p>
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
         <NuxtLink to="/review">
-          <Button label="Lets get reviewing" severity="contrast" class="!py-3 !px-5" />
+          <Button label="Lets get reviewing" severity="contrast" class="py-3! px-5!" />
         </NuxtLink>
         <NuxtLink to="/justification">
-          <Button label="More information" severity="contrast" outlined class="!py-3 !px-5" />
+          <Button label="More information" severity="contrast" outlined class="py-3! px-5!" />
         </NuxtLink>
       </div>
     </div>

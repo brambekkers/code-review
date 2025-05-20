@@ -80,10 +80,10 @@ const confirmNotApplicable = (title: string) => {
       {{ subject.title }}
     </h3>
     <div class="grid grid-cols-1 mt-16 gap-16">
-      <Fieldset v-for="topic of subject.topics" :key="topic.title" :legend="topic.title" pt:legend="font-bold text-xl" class="!mb-6">
+      <Fieldset v-for="topic of subject.topics" :key="topic.title" :legend="topic.title" pt:legend="font-bold text-xl" class="mb-6!">
         <div
           v-html="topic?.description"
-          class="border-2 border-dashed border-surface-200 h-full rounded bg-slate-50 font-medium p-5 description [&>*]:list-disc"
+          class="border-2 border-dashed border-surface-200 h-full rounded-sm bg-slate-50 font-medium p-5 description *:list-disc"
         />
         <FloatLabel class="mt-6" variant="on">
           <label :for="topic.title + 'label'">Your feedback for the whole topic...</label>
@@ -91,7 +91,7 @@ const confirmNotApplicable = (title: string) => {
         </FloatLabel>
         
 
-        <Fieldset :legend="topic.title + ' Checks'" toggleable class="!mb-5 !bg-slate-50" pt:legend="!bg-transparent">
+        <Fieldset :legend="topic.title + ' Checks'" toggleable class="mb-5! bg-slate-50!" pt:legend="bg-transparent!">
           <div class="flex justify-end flex-wrap justify-end">
             <Button
               v-if="topic.applicable"
