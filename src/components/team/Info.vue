@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const { team, reviewers } = storeToRefs(useTeamStore());
 const visible = ref(false);
-
 const nameField = ref("");
 
 const addReviewer = () => {
@@ -34,6 +33,7 @@ const removeReviewer = (remover: string) => {
           v-for="(item, key) in team"
           class="flex py-3 not-last:border-b border-secondary"
         >
+
           <!-- Keys -->
           <div class="w-1/3 capitalize">{{ formatKey(key) }}</div>
 
@@ -41,9 +41,7 @@ const removeReviewer = (remover: string) => {
           <div v-if="key === 'date'">
             <!-- {{ formatDate(item.date) }} -->
             <div class="flex flex-col gap-2">
-              <DatePicker :id="key" 
-              v-model="team[key]" 
-              />
+              <DatePicker :id="key" v-model="team[key]" />
             </div>
           </div>
 
@@ -84,6 +82,7 @@ const removeReviewer = (remover: string) => {
           </div>
         </li>
       </ul>
+
     </Fieldset>
   </div>
 </template>
