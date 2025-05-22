@@ -3,6 +3,9 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  typescript: {
+    typeCheck: true
+  },
   ssr: false,
   compatibilityDate: '2024-04-03',
   css: ['~/assets/css/main.css'],
