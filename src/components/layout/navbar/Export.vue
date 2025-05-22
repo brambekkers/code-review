@@ -5,17 +5,33 @@ const { countdown, isRunning, stoppedForever } = storeToRefs(useSaveStore());
 const toast = useToast();
 const neverShow = ref(false);
 const stringifiedData = () => JSON.stringify({ review: review.value, team: team.value }, null, 2);
+const toKebabCase = (str: string): string => {
+  if (!str) return ''; // Handle empty or undefined strings
+  return str
+    .trim() // Remove leading/trailing whitespace
+    .replace(/[^a-zA-Z0-9\s]/g, '') // Remove special characters
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .toLowerCase(); // Convert to lowercase
+};
 
 const exportData = () => {
   if (neverShow.value) {
     stopForever();
   }
+
+  const date = new Date().toISOString().split('T')[0];
+  const teamKebab = toKebabCase(team.value.teamName);
+  const applicationNameKebab = toKebabCase(team.value.applicationName);
+
+  const fileName = `${teamKebab}-${applicationNameKebab}-code-review-${date}.json`;
+  console.log('Generated fileName:', fileName);
+
   const blob = new Blob([stringifiedData()], { type: 'application/json' });
   const a = document.createElement('a');
   const url = URL.createObjectURL(blob);
 
   a.href = url;
-  a.download = 'CodeReview.json';
+  a.download = fileName;
   document.body.appendChild(a);
 
   a.click();
