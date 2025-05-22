@@ -24,7 +24,6 @@ const exportData = () => {
   const applicationNameKebab = toKebabCase(team.value.applicationName);
 
   const fileName = `${teamKebab}-${applicationNameKebab}-code-review-${date}.json`;
-  console.log('Generated fileName:', fileName);
 
   const blob = new Blob([stringifiedData()], { type: 'application/json' });
   const a = document.createElement('a');
@@ -48,6 +47,16 @@ const showSuccessMessage = () => {
 
 const stopForever = () => {
   stoppedForever.value = true;
+};
+
+const isExportDisabled = () => {
+  const teamName = team.value.teamName?.trim();
+  const applicationName = team.value.applicationName?.trim();
+
+  console.log('teamName:', teamName); // Debugging: Log teamName
+  console.log('applicationName:', applicationName); // Debugging: Log applicationName
+
+  return !teamName || !applicationName; // Disable if either is empty
 };
 </script>
 
@@ -83,7 +92,7 @@ const stopForever = () => {
       <template #footer>
         <div class="flex justify-end gap-4 w-full">
           <Button type="button" label="Cancel" outlined severity="contrast" class="px-6!" @click="neverShow ? stopForever() : useSaveStore().restart()" />
-          <Button type="button" label="Export" severity="contrast" class="px-6!" @click="exportData" />
+          <Button type="button" label="Export" severity="contrast" class="px-6!" :disabled="isExportDisabled()" :class="{ 'opacity-50 cursor-not-allowed bg-gray-300': isExportDisabled() }" @click="exportData" />
         </div>
       </template>
     </Dialog>
