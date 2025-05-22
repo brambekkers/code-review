@@ -21,6 +21,7 @@
     "@primevue/themes": "^4.3.4",
     "@tailwindcss/vite": "^4.1.7",
     "@wdns/vue-code-block": "^2.3.5",
+    "md-editor-v3": "^5.6.0",
     "nuxt": "^3.17.0",
     "nuxt-vuefire": "^1.0.5",
     "pinia": "^3.0.2",
