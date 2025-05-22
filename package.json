@@ -21,6 +21,8 @@
     "@primevue/themes": "^4.3.4",
     "@tailwindcss/vite": "^4.1.7",
     "@vee-validate/yup": "^4.15.0",
+    "@vuelidate/core": "^2.0.3",
+    "@vuelidate/validators": "^2.0.4",
     "nuxt": "^3.17.0",
     "nuxt-vuefire": "^1.0.5",
     "pinia": "^3.0.2",
