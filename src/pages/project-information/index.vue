@@ -1,4 +1,10 @@
 <script setup>
+const { team, reviewers } = useTeamStore();
+
+const checkFields = () => {
+  if(team.teamName && team.applicationName && team.reviewers && team.repoUrl)
+    navigateTo('/review')
+};
 </script>
 
 <template>
@@ -10,7 +16,7 @@
     <div class="flex flex-col gap-3 mx-auto mt-16">
       <TeamInfo />
       <div class="flex w-full gap-2">
-        <Button label="Start review" severity="contrast" @click="navigateTo('/review')" />
+        <Button label="Start review" severity="contrast" @click="checkFields()" />
       </div>
     </div>
   </div>

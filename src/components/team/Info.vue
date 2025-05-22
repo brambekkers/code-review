@@ -15,6 +15,7 @@ const removeReviewer = (remover: string) => {
     (reviewer) => reviewer !== remover
   );
 };
+
 </script>
 
 <template>
@@ -34,6 +35,7 @@ const removeReviewer = (remover: string) => {
           class="flex py-3 not-last:border-b border-secondary"
         >
 
+        {{ key }}----
           <!-- Keys -->
           <div class="w-1/3 capitalize">{{ formatKey(key) }}</div>
 
