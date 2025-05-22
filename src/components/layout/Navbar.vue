@@ -5,8 +5,8 @@ const menuitems = [
     path: '/',
   },
   {
-    title: 'Review',
-    path: '/review',
+    title: 'Project information',
+    path: '/project-information',
   },
   {
     title: 'Score',
