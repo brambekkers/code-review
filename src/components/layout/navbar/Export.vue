@@ -5,17 +5,32 @@ const { countdown, isRunning, stoppedForever } = storeToRefs(useSaveStore());
 const toast = useToast();
 const neverShow = ref(false);
 const stringifiedData = () => JSON.stringify({ review: review.value, team: team.value }, null, 2);
+const toKebabCase = (str: string): string => {
+  if (!str) return ''; // Handle empty or undefined strings
+  return str
+    .trim() // Remove leading/trailing whitespace
+    .replace(/[^a-zA-Z0-9\s]/g, '') // Remove special characters
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .toLowerCase(); // Convert to lowercase
+};
 
 const exportData = () => {
   if (neverShow.value) {
     stopForever();
   }
+
+  const date = new Date().toISOString().split('T')[0];
+  const teamKebab = toKebabCase(team.value.teamName);
+  const applicationNameKebab = toKebabCase(team.value.applicationName);
+
+  const fileName = `${teamKebab}-${applicationNameKebab}-code-review-${date}.json`;
+
   const blob = new Blob([stringifiedData()], { type: 'application/json' });
   const a = document.createElement('a');
   const url = URL.createObjectURL(blob);
 
   a.href = url;
-  a.download = 'CodeReview.json';
+  a.download = fileName;
   document.body.appendChild(a);
 
   a.click();
@@ -32,6 +47,16 @@ const showSuccessMessage = () => {
 
 const stopForever = () => {
   stoppedForever.value = true;
+};
+
+const isExportDisabled = () => {
+  const teamName = team.value.teamName?.trim();
+  const applicationName = team.value.applicationName?.trim();
+
+  console.log('teamName:', teamName); // Debugging: Log teamName
+  console.log('applicationName:', applicationName); // Debugging: Log applicationName
+
+  return !teamName || !applicationName; // Disable if either is empty
 };
 </script>
 
@@ -67,7 +92,7 @@ const stopForever = () => {
       <template #footer>
         <div class="flex justify-end gap-4 w-full">
           <Button type="button" label="Cancel" outlined severity="contrast" class="px-6!" @click="neverShow ? stopForever() : useSaveStore().restart()" />
-          <Button type="button" label="Export" severity="contrast" class="px-6!" @click="exportData" />
+          <Button type="button" label="Export" severity="contrast" class="px-6!" :disabled="isExportDisabled()" :class="{ 'opacity-50 cursor-not-allowed bg-gray-300': isExportDisabled() }" @click="exportData" />
         </div>
       </template>
     </Dialog>
