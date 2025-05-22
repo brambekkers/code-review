@@ -9,7 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "login": "firebase login",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy --only hosting"
   },
   "dependencies": {
     "@fitx/inactive-timer": "^2.3.0",
