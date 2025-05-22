@@ -20,14 +20,12 @@
     "@primevue/nuxt-module": "^4.3.4",
     "@primevue/themes": "^4.3.4",
     "@tailwindcss/vite": "^4.1.7",
-    "@wdns/vue-code-block": "^2.3.5",
     "md-editor-v3": "^5.6.0",
     "nuxt": "^3.17.0",
     "nuxt-vuefire": "^1.0.5",
     "pinia": "^3.0.2",
     "pinia-plugin-persistedstate": "^4.3.0",
     "primevue": "^4.3.4",
-    "quill": "^2.0.3",
     "vue": "^3.5.14"
   },
   "devDependencies": {
