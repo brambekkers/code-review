@@ -16,10 +16,8 @@ const { subjects, answeredPercentage } = storeToRefs(useReviewStore());
         Dive deep into a collaborative code review with the project team, track progress, and provide constructive feedback to enhance the quality of development projects. 
         Empower the reviewed team with detailed insights and ensure best practices are followed across all coding endeavors.
       </p>
-
-      <TeamInfo />
     </div>
-    <div id="review-progress" class="flex flex-col gap-3 mx-auto max-w-(--breakpoint-xl) xl:max-w-(--breakpoint-2xl) mt-16">
+    <div id="review-progress" class="flex flex-col gap-3 mx-auto max-w-(--breakpoint-xl) xl:max-w-(--breakpoint-2xl)">
       <label class="text-sm text-slate-500 flex justify-between item-end -mb-2 mt-16" for="progressBar">
         Your review progress
         <div class="font-bold">{{ Math.round(answeredPercentage) }}%</div>
