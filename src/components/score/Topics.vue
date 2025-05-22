@@ -30,9 +30,9 @@ const hasNonEmptyComment = (questions: Question[]): boolean => {
               <p class="comment text-xl">{{ topic.comment }}</p>
               <div v-for="question of topic.questions" :key="question.question">
                 <div v-if="question.comment">
-                  <h6 class="mt-2">
+                  <h5 class="mt-2">
                     <strong>{{ question.question }} </strong>
-                  </h6>
+                  </h5>
                   <p class="comment">{{ question.comment }}</p>
                 </div>
               </div>
