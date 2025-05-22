@@ -14,6 +14,11 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['stores'],
   },
+  runtimeConfig: {
+    public: {
+      currentVersion: process.env.CURRENT_VERSION || 'dev'
+    }
+  },
   vite: {
     plugins: [
       tailwindcss(),

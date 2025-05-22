@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: echo "CURRENT_VERSION=$(git rev-parse main)" >> $GITHUB_ENV
+        env:
+          CURRENT_VERSION: ${{ env.CURRENT_VERSION }}
       - run: npm ci && npm run generate
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
