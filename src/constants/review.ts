@@ -1,4 +1,10 @@
-export const review = {
+import type { Subject } from "~/types/review";
+
+type Review = { 
+  [K in string]: Subject
+}
+
+export const review: Review = {
   qualityGates: {
     title: 'Code Quality',
     img: '/img/quality.avif',
@@ -553,4 +559,3 @@ export const review = {
     ],
   },
 };
-
