@@ -6,6 +6,6 @@ const text = defineModel("text");
 </script>
 <template>
   <div>
-    <MdEditor :preview="false" language="en-US" v-model="text" />
+    <MdEditor language="en-US" v-model="text" />
   </div>
 </template>
