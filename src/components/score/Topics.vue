@@ -1,13 +1,6 @@
 <script setup lang="ts">
 const { subjects } = storeToRefs(useReviewStore());
-
-type Question = {
-  question: string;
-  score: number;
-  weight: number;
-  questionType: string;
-  comment: string;
-}
+import type { Question } from '@/types/review.js';
 
 const hasAnyFeedback = computed(() => subjects.value.some((subject) => subject.topics.some((topic) => topic.comment)));
 
