@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reviewPlaceholders } from '@/constants/placeholders';
-import type { Question } from '@/types/review.js';
+import type { Question } from '~/types/review';
 const question = defineModel<Question>({ required: true });
 
 watch(() => question.value.score, useReviewStore().nextQuestion);
@@ -48,8 +48,8 @@ const collapsed = ref(true);
       </div>
     </template>
     <div v-if="question" class="flex h-full w-full flex-col items-end">
-      <BaseRateSelect v-if="question.questionType === 'rating'" v-model="question.score" class="w-60!" />
-      <BaseTrueFalse v-if="question.questionType === 'trueFalse'" v-model="question.score" />
+      <BaseRateSelect v-if="question.questionType === 'rating'" :options="question?.options" v-model="question.score" class="w-60!" />
+      <BaseTrueFalse v-if="question.questionType === 'trueFalse'" :options="question?.options" v-model="question.score" />
 
       <Textarea
         v-model="question.comment"

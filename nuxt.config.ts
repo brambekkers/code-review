@@ -3,6 +3,9 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  typescript: {
+    typeCheck: true
+  },
   ssr: false,
   compatibilityDate: '2024-04-03',
   css: ['~/assets/css/main.css'],
@@ -13,6 +16,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   imports: {
     dirs: ['stores'],
+  },
+  runtimeConfig: {
+    public: {
+      currentVersion: process.env.CURRENT_VERSION || 'dev'
+    }
   },
   vite: {
     plugins: [
@@ -42,13 +50,12 @@ export default defineNuxtConfig({
       enabled: true,
     },
     config: {
-      apiKey: 'AIzaSyBPwpOPDoJ6kheG_qDYxJFdVk3PtLUrca0',
-      authDomain: 'code-review-f53d6.firebaseapp.com',
-      projectId: 'code-review-f53d6',
-      storageBucket: 'code-review-f53d6.appspot.com',
-      messagingSenderId: '328549315397',
-      appId: '1:328549315397:web:e9da32c9f766b0cf24442c',
-      measurementId: 'G-4C9D38WGLW',
+      apiKey: "AIzaSyBBRQ3qdWfVW4KD3Lg8yM4lbTW-y1NOjj8",
+      authDomain: "code-review-8419e.firebaseapp.com",
+      projectId: "code-review-8419e",
+      storageBucket: "code-review-8419e.firebasestorage.app",
+      messagingSenderId: "506740216853",
+      appId: "1:506740216853:web:32ca32859fcef473312a1c"
     },
   },
 });

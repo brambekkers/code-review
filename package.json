@@ -9,7 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "login": "firebase login",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy --only hosting"
   },
   "dependencies": {
     "@fitx/inactive-timer": "^2.3.0",
@@ -37,6 +37,7 @@
     "firebase-tools": "^14.1.0",
     "tailwindcss": "^4.1.7",
     "typescript": "^5.8.3",
+    "vue-tsc": "^2.2.10",
     "vuefire": "^3.2.1"
   }
 }

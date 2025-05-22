@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { FileUploadUploaderEvent } from 'primevue';
+
 const { review } = storeToRefs(useReviewStore());
 const { team } = storeToRefs(useTeamStore());
 
@@ -21,13 +23,13 @@ const isReviewFile = (content: any) => {
   return content && hasAllTheKeysKeys && !hasIncorrectKeys;
 };
 
-const upload = (input: HTMLInputElement) => {
-  if (!input.files || input.files.length === 0) {
+const upload = (input: FileUploadUploaderEvent) => {
+  if (!input.files || Array.isArray(input.files) && input.files.length < 1) {
     console.log('No file selected');
     return;
   }
 
-  const file = input.files[0];
+  const file = Array.isArray(input.files) ? input.files[0] : input.files;
   const reader = new FileReader();
 
   reader.onload = (e) => {

@@ -4,13 +4,25 @@ export type Review = typeof review;
 export type SubjectsKeys = keyof typeof review;
 export type QuestionType = 'trueFalse' | 'rating';
 
-export type Question = {
+type BaseQuestion = {
   score: number | null;
   question: string;
   comment: string;
   weight: number;
   questionType: QuestionType;
 };
+
+export type TrueFalseQuestion = { 
+  questionType: 'trueFalse', 
+  options?: [string, string]
+}
+
+export type RatingQuestion = { 
+  questionType: 'rating', 
+  options?: [string, string, string, string, string, string]
+} 
+
+export type Question = BaseQuestion & (TrueFalseQuestion | RatingQuestion)
 
 export type Subject = {
   title: string;
